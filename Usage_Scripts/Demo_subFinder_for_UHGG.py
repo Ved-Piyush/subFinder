@@ -2,6 +2,8 @@ import pandas as pd
 import gensim
 import numpy as np
 from tqdm import tqdm
+from imblearn.ensemble import BalancedRandomForestClassifier
+
 ## In this script we will show how to use the created subFinder pipeline for making predictions for the UHGG data
 
 ## make sure the UHGG data is in the Data/Unsupervised_Sequences
@@ -84,7 +86,7 @@ trained_word2vec_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//
 vocab_cbow = set(trained_word2vec_cbow.wv.index_to_key)
 
 ## use the embedding module to convert the sequences to vectors
-X_train_doc_vectors = []
+X_unsupervised_vectors = []
     
 for train_item in tqdm(uhgg_data["sequence"].values):
     train_item = train_item.replace("|", ",").split(",")
@@ -93,10 +95,47 @@ for train_item in tqdm(uhgg_data["sequence"].values):
         if len(vocab_cbow.intersection([word])) == 1:
             word_vectors.append(trained_word2vec_cbow.wv.get_vector(word))
     if len(word_vectors) == 0: 
-        X_train_doc_vectors.append(np.zeros((1,trained_word2vec_cbow.wv.vectors.shape[1])).tolist()[0])
+        X_unsupervised_vectors.append(np.zeros((1,trained_word2vec_cbow.wv.vectors.shape[1])).tolist()[0])
     else:
-        X_train_doc_vectors.append(np.array(word_vectors).mean(0).tolist())
+        X_unsupervised_vectors.append(np.array(word_vectors).mean(0).tolist())
+
+X_unsupervised_vectors = np.array(X_unsupervised_vectors)
 
 
 ## Step 3
 
+## similarly also convert the supervised data sequences
+X_supervised_vectors = []
+    
+for train_item in tqdm(data["cazymes_predicted_dbcan"].values):
+    train_item = train_item.replace("|", ",").split(",")
+    word_vectors = []
+    for word in train_item: 
+        if len(vocab_cbow.intersection([word])) == 1:
+            word_vectors.append(trained_word2vec_cbow.wv.get_vector(word))
+    if len(word_vectors) == 0: 
+        X_supervised_vectors.append(np.zeros((1,trained_word2vec_cbow.wv.vectors.shape[1])).tolist()[0])
+    else:
+        X_supervised_vectors.append(np.array(word_vectors).mean(0).tolist())
+
+X_supervised_vectors = np.array(X_supervised_vectors)
+
+## Now train and get predictions
+catch_all_predictions = np.zeros((len(X_unsupervised_vectors), len(best_params_word2vec_cbow)))
+catch_all_predictions = catch_all_predictions.astype(str)
+
+
+# get the predictions
+counter = 0
+for param in tqdm(best_params_word2vec_cbow): 
+    n_est = param["vr__n_estimators"]
+    brf = BalancedRandomForestClassifier(random_state = 42, n_jobs = 7, n_estimators = n_est)
+    brf.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"])
+    catch_all_predictions[:, counter] = brf.predict(X_unsupervised_vectors)
+    counter = counter + 1
+
+## take column wise modes and that will be the final prediction
+from scipy import stats
+mode_results = stats.mode(catch_all_predictions, axis = 1)
+predictions_uhgg = mode_results.mode
+uhgg_data["predicted_substrate"] = predictions_uhgg
