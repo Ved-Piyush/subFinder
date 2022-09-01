@@ -1,0 +1,13 @@
+3.A.1,3.A.1,GH17,3.A.1,2.A.1
+1.A.34,TPR_1,GT30,3.A.5
+3.A.3,PfkB,GT9,GT9,GT2,GT4,GT9,3.A.1
+3.A.6,Peptidase_M23,CE11
+5.A.1,Aminotran_1_2,GT19,9.B.34
+GT83,3.A.3
+8.A.5,GT2,2.A.6,GH102
+9.B.18,GT4,GT4,8.A.1,3.A.1
+GT4|GT4,3.A.1,3.A.1,GT4,9.B.18,Pyr_redox_2,1.A.23
+GH23,HATPase_c|HisKA,Trans_reg_C|Response_reg,9.A.8,FeoA,3.A.18
+GT28,2.A.103
+1.B.67,3.A.1,3.A.1,3.A.1,3.A.1,GT51,3.A.1,Aminotran_1_2,9.B.34
+3.A.1,3.A.1,3.A.1,Pribosyltran,GH3,2.A.21,GH103,2.A.1,2.A.37,Pyr_redox_2,3.A.6

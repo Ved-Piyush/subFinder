@@ -1,0 +1,13 @@
+9.B.34,GH30_1,HTH_1|LysR_substrate,Fer4,3.A.1,3.A.1,3.A.1,3.A.1,1.A.1,2.A.45,3.A.1,3.A.1,3.A.1,3.D.4,3.D.4,1.C.113,9.A.40,PspC,Rrf2,TrkA_C,3.A.3
+5.A.1,Pyr_redox_2,TetR_N|TetR_C,9.B.18,GT26,9.B.18
+GH2,2.A.1
+GT2,Pribosyltran,GerE,5.A.3,5.A.3
+1.I.1,Pyr_redox_2,HTH_3,GT28,HTH_1|LysR_substrate,2.A.7,GT81,Response_reg|HisKA|HATPase_c,3.D.1
+5.A.3,5.A.3,3.A.1,GT2
+3.A.1,GT20
+9.B.18,SBP_bac_1,9.A.28,HTH_IclR,HTH_IclR,3.A.1,SBP_bac_1,GT4
+GT2,GH73,3.A.1,3.A.1
+GT28,2.A.103,9.B.146
+2.A.21,4.C.1,Pyr_redox_2,GerE,Response_reg|Trans_reg_C,HisKA|HATPase_c,5.A.3,5.A.3,Response_reg|Trans_reg_C,HisKA|HATPase_c,5.A.3,5.A.3,5.A.3,5.A.3,HisKA|HATPase_c,Response_reg|Trans_reg_C,Fer4,3.A.1,3.A.1,3.A.1,3.A.1,GGDEF,2.A.23,CE9,3.A.5
+3.A.1,Rrf2,GT51,GH25,IclR|HTH_IclR,2.A.1,2.A.1
+CE4,2.A.45

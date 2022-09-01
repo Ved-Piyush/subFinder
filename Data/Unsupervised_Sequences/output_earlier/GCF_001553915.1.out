@@ -1,0 +1,13 @@
+4.A.1,HTH_6|SIS,2.A.1,GH23,2.A.6
+2.A.7,2.A.79,2.A.79,HisKA|HATPase_c,Trans_reg_C|Response_reg,CBM50,5.A.1,2.A.21
+9.B.18,3.A.16,Pribosyltran,CE9,LacI|Peripla_BP_1,2.A.1
+2.A.66,9.B.18,GT2,2.A.66
+GH73,GT2,3.A.1,3.A.1
+3.A.1,3.A.1,3.A.1,GT2,TetR_N,3.A.1,3.A.1,3.A.1
+GH77,3.A.1,3.A.1,3.A.1,2.A.49,Rhodanese,2.A.79
+3.A.1,9.B.97,HxlR,3.A.1,3.A.1,3.A.1,TetR_N,9.B.74,3.A.1,3.A.1,GT28
+2.A.1,MarR,2.A.3,HD,3.A.1,MarR,GT51,2.A.66,HxlR,9.A.23
+3.A.1,GH13_39,GH13_9,GT5,GT35,PadR,1.C.109
+1.C.82,GntR,GT2
+3.A.1,2.A.21,GT28
+2.A.50,3.A.1,3.A.1,GntR|CBS,Pribosyltran,9.A.40,CE7,3.A.2,3.A.2,3.A.2

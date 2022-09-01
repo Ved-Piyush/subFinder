@@ -1,0 +1,15 @@
+3.A.1,3.A.1,3.A.1,3.A.1,GT28,GT2
+2.A.38,2.A.38,2.A.38,Pyr_redox,GH13_39,GT35,9.B.157,3.A.1
+GT1,3.A.3
+3.A.23,2.A.8,GH1,4.A.1,4.A.1,PTS-HPr,8.A.7,Peripla_BP_1,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,8.A.59,Response_reg|HTH_18,TetR_N,3.A.3
+GH3,2.A.2,2.A.56,2.A.56
+CE4,2.A.107
+GH25,Response_reg|Trans_reg_C,HATPase_c|HisKA,TrkA_C,2.A.38,LysR_substrate|HTH_1,Aminotran_1_2,Citrate_synt,2.A.23
+GH23,Response_reg,CheC,9.B.34,GT4,GT4,GT2,GT4
+3.A.1,GntR,3.A.1,HD,HATPase_c|PAS|HisKA,Response_reg|Trans_reg_C,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,GH130,9.B.18,3.A.1
+GT28,2.A.103,9.B.146
+GH130,3.A.18
+GH24,2.A.27,3.B.1,3.B.1,3.B.1,HTH_IclR|IclR,2.A.102,FeoA,2.A.25,Nitro_FeMo-Co,GT2,Glyoxalase,GGDEF|EAL|CBS,1.B.52,Fe_dep_repress|Fe_dep_repr_C,Sigma70_r4,2.A.66
+GT2,GT2,1.B.52
+3.A.23,4.C.1,TetR_N,2.A.6,3.A.1,3.A.1,HATPase_c|HisKA,Response_reg|Trans_reg_C,GH23
+GH25,3.A.3

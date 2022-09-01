@@ -1,0 +1,17 @@
+CE4,GH73,2.A.38,2.A.38,9.B.156,9.B.156,3.A.1
+GT4,GT4,4.A.1
+9.A.11,2.A.3,GT28
+2.A.5,Pribosyltran,9.B.146,GT0
+2.A.107,FUR,8.A.59,9.B.104,3.A.25,HTH_3,TPR_1,3.A.9,CE4
+2.A.88,Fer4,CE4,3.A.1
+3.A.15,GT2
+9.B.102,9.B.102,HTH_1|LysR_substrate,Pyr_redox_2|Rhodanese,9.B.102,GH18,CE4,9.B.34
+2.A.5,GT2,Nitroreductase,2.A.68
+3.D.1,3.D.1,2.A.63,3.D.1,2.A.63,PALP,Rrf2,2.A.107,1.A.26,3.A.1,3.A.1,3.A.1,3.A.1,GH39,2.A.66
+2.A.7,cNMP_binding,EPSP_synthase,CE4
+GT0,9.B.18
+GH3,2.A.76,2.A.26
+3.B.1,Pribosyltran,GT51,9.A.11,9.A.11,Sigma70_r3|Sigma70_r2|Sigma70_r4,HATPase_c,STAS,CE4,GT26,9.B.18,2.A.66,GT4,GT2,SBP_bac_1,2.A.66,GT4,GT4,9.B.18
+3.A.1,3.A.1,3.A.1,GH0,LacI|Peripla_BP_3,3.A.1,3.A.1,3.A.1
+2.A.68,Trp_repressor,GH23
+GT84|GH94,2.A.4,3.A.25,2.A.24

@@ -1,0 +1,13 @@
+1.A.16,GerE,Pyr_redox_2,2.A.22,EAL|GGDEF,HATPase_c,Nitroreductase,HTH_1|LysR_substrate,HTH_1|LysR_substrate,1.A.8,Pyr_redox_2,Rhodanese,2.A.1,9.B.34,GH30_1,3.D.4,3.D.4,1.C.113,9.A.40,PspC,TrkA_C,3.A.3,Fer4,3.D.1
+2.A.23,Response_reg|Trans_reg_C,3.A.1,HisKA|HATPase_c,TetR_N,2.A.1,GerE,GH3
+GH73,3.A.7
+9.B.97,2.A.98,FUR,3.A.1,HTH_3,Response_reg|Trans_reg_C,HisKA|HATPase_c,3.A.3,3.A.3,3.A.3,GerE,Fer4|Nitroreductase,Fer4,TetR_N,2.A.1,GH25,GT51,3.A.1
+8.A.21,5.A.3,5.A.3,1.I.1,9.B.18,GT0,PL12_3
+GT51,GT51,Sigma70_r2|Sigma70_r4_2,9.B.18,GT2,GT2,CBM13|CBM13|CBM13|CBM13|GH5_35|CBM13,GH25|CBM13|CBM13,9.B.18,Aminotran_1_2,GT2,GT2,GT2
+GT111,3.A.1,GT2,MarR,2.A.3,9.B.18
+9.B.146,2.A.103,GT28
+1.I.1,GT28,GT2
+GH73,3.A.7
+3.D.2,3.D.2,9.B.74,9.B.74,Pyr_redox_2,5.A.3,GntR,3.A.1,1.A.23,2.A.56,3.A.1,GerE,GT2
+GT8,2.A.86,3.A.16
+GH2,2.A.1,Response_reg|Trans_reg_C,2.A.21
