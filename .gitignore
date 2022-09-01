@@ -1,2 +1,2 @@
-# Ignore node_modules folder
-Embedding_Models
+# Ignore all npyfiles
+*.npy
