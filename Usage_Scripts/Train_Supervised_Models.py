@@ -10,9 +10,25 @@ from Codes.Supervised_Trainer import balanced_random_forest_BOW, balanced_random
 sup_data_path = r"Data/Supervised_Sequences/dbCAN-PUL_07-01-2022.xlsx"
 supervised_data = pd.read_excel(sup_data_path, sheet_name="Sheet1")
 
+## removing the catch all classes
+## for example multiple substrates and others 
+old_data = pd.read_csv('Data/Supervised_Sequences/pul_seq_low_high_substr_year_corrected.tsv', sep = "\t")
+
+old_data["high_level_substr"] = old_data["high_level_substr"].str.strip()
+
+bad_puls = old_data[old_data["high_level_substr"].isin(["multiple_substrates", "mono/di/trisaccharide", "-", "human milk oligosaccharide", 
+                                            "glycoprotein", "plant polysaccharide", "cellobiose"])]["PULid"].values
+
+supervised_data = supervised_data[~supervised_data["ID"].isin(bad_puls)]
+
 ## top k
-order = list(supervised_data["updated_substrate (07/01/2022)"].value_counts()[:6].index)
+how_many = 5
+order = list(supervised_data["updated_substrate (07/01/2022)"].value_counts()[:how_many].index)
 data = supervised_data[supervised_data["updated_substrate (07/01/2022)"].isin(order)]
+data_unknown = supervised_data[~supervised_data["updated_substrate (07/01/2022)"].isin(order)]
+data_unknown["updated_substrate (07/01/2022)"] = "Others"
+data = pd.concat([data, data_unknown], ignore_index = True)
+order = list(data["updated_substrate (07/01/2022)"].value_counts().index)
 
 ## BOW model
 accuracy_bow, avg_accuracy_bow, avg_std_dev_bow, avg_overall_report_bow, fig_bow, fig1_bow, best_params_bow = balanced_random_forest_BOW(data, order)

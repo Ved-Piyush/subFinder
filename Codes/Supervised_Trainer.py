@@ -36,12 +36,12 @@ def balanced_random_forest_BOW(data, order):
 
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
         clf_one_vs_rest = Pipeline([('vectorizer',CountVectorizer(tokenizer=lambda x: str(x).replace("|", ",").split(','), 
                                                               lowercase = False)), 
                                 
-                                ('vr', BalancedRandomForestClassifier(n_jobs = 7))
+                                ('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                 ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
@@ -161,9 +161,9 @@ def balanced_random_forest_Doc2Vec_DM(data, order, trained_doc2vec_dm):
            X_test_doc_vectors.append(trained_doc2vec_dm.infer_vector(test_item).tolist())    
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                     ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
@@ -204,7 +204,7 @@ def balanced_random_forest_Doc2Vec_DM(data, order, trained_doc2vec_dm):
     # make the plot
     fig = plt.figure(figsize = (10, 10))
     sns.heatmap(df_cm, annot = True,  annot_kws={"fontsize":12, "weight":"bold"})
-    plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
+    plt.title("10-fold averaged confusion matrix for the Doc2Vec_DM BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
@@ -280,9 +280,9 @@ def balanced_random_forest_Doc2Vec_DBOW(data, order, trained_doc2vec_dbow):
            X_test_doc_vectors.append(trained_doc2vec_dbow.infer_vector(test_item).tolist())    
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                     ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
@@ -323,7 +323,7 @@ def balanced_random_forest_Doc2Vec_DBOW(data, order, trained_doc2vec_dbow):
     # make the plot
     fig = plt.figure(figsize = (10, 10))
     sns.heatmap(df_cm, annot = True,  annot_kws={"fontsize":12, "weight":"bold"})
-    plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
+    plt.title("10-fold averaged confusion matrix for the Doc2Vec_DBOW BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
@@ -417,9 +417,9 @@ def balanced_random_forest_Word2Vec_CBOW(data, order, trained_word2vec_cbow, voc
     
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                     ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
@@ -459,7 +459,7 @@ def balanced_random_forest_Word2Vec_CBOW(data, order, trained_word2vec_cbow, voc
     # make the plot
     fig = plt.figure(figsize = (10, 10))
     sns.heatmap(df_cm, annot = True,  annot_kws={"fontsize":12, "weight":"bold"})
-    plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
+    plt.title("10-fold averaged confusion matrix for the Word2Vec_CBOW BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
@@ -553,9 +553,9 @@ def balanced_random_forest_Word2Vec_SG(data, order, trained_word2vec_sg, vocab_s
     
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                     ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
@@ -595,7 +595,7 @@ def balanced_random_forest_Word2Vec_SG(data, order, trained_word2vec_sg, vocab_s
     # make the plot
     fig = plt.figure(figsize = (10, 10))
     sns.heatmap(df_cm, annot = True,  annot_kws={"fontsize":12, "weight":"bold"})
-    plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
+    plt.title("10-fold averaged confusion matrix for the Word2Vec_SG BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
@@ -682,9 +682,9 @@ def balanced_random_forest_FastText_SG(data, order, trained_fasttext_sg):
     
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                     ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
@@ -724,7 +724,7 @@ def balanced_random_forest_FastText_SG(data, order, trained_fasttext_sg):
     # make the plot
     fig = plt.figure(figsize = (10, 10))
     sns.heatmap(df_cm, annot = True,  annot_kws={"fontsize":12, "weight":"bold"})
-    plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
+    plt.title("10-fold averaged confusion matrix for the FastText_SG BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
@@ -813,9 +813,9 @@ def balanced_random_forest_FastText_CBOW(data, order, trained_fasttext_cbow):
     
     
     
-        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                     ])
     
         parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
@@ -855,7 +855,7 @@ def balanced_random_forest_FastText_CBOW(data, order, trained_fasttext_cbow):
     # make the plot
     fig = plt.figure(figsize = (10, 10))
     sns.heatmap(df_cm, annot = True,  annot_kws={"fontsize":12, "weight":"bold"})
-    plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
+    plt.title("10-fold averaged confusion matrix for the FastText_CBOW BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
