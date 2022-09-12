@@ -3,6 +3,7 @@ import gensim
 import numpy as np
 from tqdm import tqdm
 from imblearn.ensemble import BalancedRandomForestClassifier
+import matplotlib.pyplot as plt
 
 ## In this script we will show how to use the created subFinder pipeline for making predictions for the UHGG data
 
@@ -58,10 +59,11 @@ avg_accuracy_fasttext_cbow, avg_std_dev_fasttext_cbow, avg_overall_report_fastte
 avg_accuracy_word2vec_cbow, avg_std_dev_word2vec_cbow, avg_overall_report_word2vec_cbow
 
 ## confusion matrix 
-fig_word2vec_cbow 
+
+fig_word2vec_cbow.savefig(r"Results/best_confusion_matrix")
 
 ## Precision Matrix
-fig1_word2vec_cbow 
+fig1_word2vec_cbow.savefig(r"Results/best_precision_matrix") 
 
 ## best params
 best_params_word2vec_cbow
@@ -82,7 +84,7 @@ uhgg_data = pd.read_csv(r"Data/Output/Unsupervised/output_UHGG.csv")
 ## Step 2 get the winner embedding module
 ## winner was the word2vec module
 
-trained_word2vec_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//word2vec_cbow") 
+trained_word2vec_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//doc2vec_dm") 
 vocab_cbow = set(trained_word2vec_cbow.wv.index_to_key)
 
 ## use the embedding module to convert the sequences to vectors
@@ -123,6 +125,10 @@ X_supervised_vectors = np.array(X_supervised_vectors)
 ## Now train and get predictions
 catch_all_predictions = np.zeros((len(X_unsupervised_vectors), len(best_params_word2vec_cbow)))
 catch_all_predictions = catch_all_predictions.astype(str)
+catch_all_probs = np.zeros((len(X_unsupervised_vectors),  len(order)))
+
+
+best_params_word2vec_cbow = best_params_doc2vec_dm
 
 
 # get the predictions
@@ -131,11 +137,22 @@ for param in tqdm(best_params_word2vec_cbow):
     n_est = param["vr__n_estimators"]
     brf = BalancedRandomForestClassifier(random_state = 42, n_jobs = 7, n_estimators = n_est)
     brf.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"])
+    # print(brf.classes_)
     catch_all_predictions[:, counter] = brf.predict(X_unsupervised_vectors)
+    catch_all_probs += brf.predict_proba(X_unsupervised_vectors)
     counter = counter + 1
 
+
+catch_all_probs = catch_all_probs/len(best_params_word2vec_cbow)
+catch_all_probs = pd.DataFrame(catch_all_probs)
+catch_all_probs.columns = brf.classes_
+predictions_uhgg = catch_all_probs.idxmax(axis=1)
+
 ## take column wise modes and that will be the final prediction
-from scipy import stats
-mode_results = stats.mode(catch_all_predictions, axis = 1)
-predictions_uhgg = mode_results.mode
+# from scipy import stats
+# mode_results = stats.mode(catch_all_predictions, axis = 1)
+# predictions_uhgg = mode_results.mode
+uhgg_data = pd.concat([uhgg_data, catch_all_probs], 1)
 uhgg_data["predicted_substrate"] = predictions_uhgg
+uhgg_data.to_csv("Data/Output/Predictions/Predictions_UHGG.csv", index = False)
+uhgg_data["predicted_substrate"].value_counts()
