@@ -4,6 +4,7 @@ import numpy as np
 from tqdm import tqdm
 from imblearn.ensemble import BalancedRandomForestClassifier
 import matplotlib.pyplot as plt
+from scipy.stats import binom
 
 ## In this script we will show how to use the created subFinder pipeline for making predictions for the UHGG data
 
@@ -145,14 +146,28 @@ for param in tqdm(best_params_word2vec_cbow):
 
 catch_all_probs = catch_all_probs/len(best_params_word2vec_cbow)
 catch_all_probs = pd.DataFrame(catch_all_probs)
-catch_all_probs.columns = brf.classes_
-predictions_uhgg = catch_all_probs.idxmax(axis=1)
+catch_all_probs.columns = ["probability_" + i for i in brf.classes_]
+all_predictions_df = pd.DataFrame(catch_all_predictions)
+# predictions_uhgg = catch_all_probs.idxmax(axis=1)
 
 ## take column wise modes and that will be the final prediction
-# from scipy import stats
-# mode_results = stats.mode(catch_all_predictions, axis = 1)
-# predictions_uhgg = mode_results.mode
+from scipy import stats
+mode_results = stats.mode(catch_all_predictions, axis = 1)
+predictions_uhgg = mode_results.mode
 uhgg_data = pd.concat([uhgg_data, catch_all_probs], 1)
 uhgg_data["predicted_substrate"] = predictions_uhgg
-uhgg_data.to_csv("Data/Output/Predictions/Predictions_UHGG.csv", index = False)
+repeated_data = pd.concat([uhgg_data["predicted_substrate"]] * (len(best_params_word2vec_cbow)), axis=1, ignore_index=True)
+element_comparison = repeated_data == all_predictions_df
+uhgg_data["successes"] = element_comparison.sum(axis = 1)
+
+
+def p_value_function(successes, trials= len(best_params_word2vec_cbow), order = order): 
+    prob = binom.cdf(successes, trials, 1/len(order))
+    return 1-prob
+
+p_value = uhgg_data["successes"].map(p_value_function)
+
+uhgg_data["p_value"] = p_value
+
+uhgg_data.to_csv("Data/Output/Predictions/Predictions_UHGG_with_probability_and_p_values.csv", index = False)
 uhgg_data["predicted_substrate"].value_counts()
