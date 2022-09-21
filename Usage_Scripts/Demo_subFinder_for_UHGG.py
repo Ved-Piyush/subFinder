@@ -5,7 +5,7 @@ from tqdm import tqdm
 from imblearn.ensemble import BalancedRandomForestClassifier
 import matplotlib.pyplot as plt
 from scipy.stats import binom
-
+from sklearn.multiclass import OneVsRestClassifier
 ## In this script we will show how to use the created subFinder pipeline for making predictions for the UHGG data
 
 ## make sure the UHGG data is in the Data/Unsupervised_Sequences
@@ -34,7 +34,7 @@ exec(open("Usage_Scripts/Train_Supervised_Models.py").read())
 ## also other metrics like Precision, F1, Recall
 
 ## for BOW
-avg_accuracy_bow, avg_std_dev_bow, avg_overall_report_bow
+accuracy_bow, avg_accuracy_bow, avg_overall_report_bow 
 
 ## for Doc2Vec_DM
 avg_accuracy_doc2vec_dm, avg_std_dev_doc2vec_dm, avg_overall_report_doc2vec_dm
@@ -67,7 +67,7 @@ fig_word2vec_cbow.savefig(r"Results/best_confusion_matrix")
 fig1_word2vec_cbow.savefig(r"Results/best_precision_matrix") 
 
 ## best params
-best_params_word2vec_cbow
+model_lists_bow
 
 
 ## Now we have everything we need to get predictions for the UHGG data
@@ -121,53 +121,97 @@ for train_item in tqdm(data["cazymes_predicted_dbcan"].values):
     else:
         X_supervised_vectors.append(np.array(word_vectors).mean(0).tolist())
 
+
 X_supervised_vectors = np.array(X_supervised_vectors)
 
-## Now train and get predictions
-catch_all_predictions = np.zeros((len(X_unsupervised_vectors), len(best_params_word2vec_cbow)))
-catch_all_predictions = catch_all_predictions.astype(str)
-catch_all_probs = np.zeros((len(X_unsupervised_vectors),  len(order)))
+## To get easy to understand p values
+## we need to change the model a bit
 
-
-best_params_word2vec_cbow = best_params_doc2vec_dm
-
+model_check =  OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
+model_check.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"].values)
+class_order = model_check.classes_
 
 # get the predictions
+preds_df = pd.DataFrame()
 counter = 0
-for param in tqdm(best_params_word2vec_cbow): 
-    n_est = param["vr__n_estimators"]
-    brf = BalancedRandomForestClassifier(random_state = 42, n_jobs = 7, n_estimators = n_est)
-    brf.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"])
-    # print(brf.classes_)
-    catch_all_predictions[:, counter] = brf.predict(X_unsupervised_vectors)
-    catch_all_probs += brf.predict_proba(X_unsupervised_vectors)
+outer_catch = []
+
+# we will store the normalized probabilities here
+normalized_probs = np.zeros((len(X_unsupervised_vectors), len(class_order)))
+
+## ensemble of 15 models
+how_many = 15
+
+## loop over
+for inner in tqdm(range(0,how_many)): 
+    
+    ## one vs all model
+    model =  OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
+    model.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"].values)
+    preds_full = model.predict(X_unsupervised_vectors)
+    preds_proba = model.predict_proba(X_unsupervised_vectors)
+    normalized_probs += preds_proba
+    
+    ## grab all the separate one vs all estimators
+    ova_ests = model.estimators_
+    inner_counter = 0
+    inner_catch = []
+    for ests in ova_ests: 
+        preds = ests.predict_proba(X_unsupervised_vectors)     
+        # preds_bin = ests.predict(X_unsupervised_vectors)   
+        # preds_bin = pd.DataFrame(preds_bin)
+        # preds_bin.columns = [class_order[inner_counter] + "_" + str(counter) + "_yes_or_no"]
+        preds_df1 = pd.DataFrame(preds)
+        preds_df1 = preds_df1[[1]]
+        preds_df1 = pd.DataFrame(preds_df1)
+        preds_df1.columns = ["unnormalized_prob_" + class_order[inner_counter] + "_" + str(counter)]
+        preds_df1 = pd.concat([preds_df1], 1)
+        inner_catch.append(preds_df1)
+        # preds_df = pd.concat([preds_df, preds_df1], 1)
+        inner_counter += 1
+    
+    inner_catch_df = pd.concat(inner_catch,1)
+    outer_catch.append(inner_catch_df)
     counter = counter + 1
 
 
-catch_all_probs = catch_all_probs/len(best_params_word2vec_cbow)
-catch_all_probs = pd.DataFrame(catch_all_probs)
-catch_all_probs.columns = ["probability_" + i for i in brf.classes_]
-all_predictions_df = pd.DataFrame(catch_all_predictions)
-# predictions_uhgg = catch_all_probs.idxmax(axis=1)
-
-## take column wise modes and that will be the final prediction
-from scipy import stats
-mode_results = stats.mode(catch_all_predictions, axis = 1)
-predictions_uhgg = mode_results.mode
-uhgg_data = pd.concat([uhgg_data, catch_all_probs], 1)
-uhgg_data["predicted_substrate"] = predictions_uhgg
-repeated_data = pd.concat([uhgg_data["predicted_substrate"]] * (len(best_params_word2vec_cbow)), axis=1, ignore_index=True)
-element_comparison = repeated_data == all_predictions_df
-uhgg_data["successes"] = element_comparison.sum(axis = 1)
+outer_catch_df = pd.concat(outer_catch,1)
+reorder = np.sort(outer_catch_df.columns)
+outer_catch_df = outer_catch_df[reorder]
+outer_catch_df["sequence"] = uhgg_data["sequence"]
+cols = list(outer_catch_df.columns)
+# move the column to head of list using index, pop and insert
+cols.insert(0, cols.pop(cols.index('sequence')))
+outer_catch_df = outer_catch_df[cols]
 
 
-def p_value_function(successes, trials= len(best_params_word2vec_cbow), order = order): 
-    prob = binom.cdf(successes, trials, 1/len(order))
+normalized_probs/= how_many
+normalized_probs = pd.DataFrame(normalized_probs)
+normalized_probs.columns = ["normalized_prob_" + item  for item in class_order]
+normalized_probs["sequence"] = uhgg_data["sequence"]
+cols = list(normalized_probs.columns)
+# move the column to head of list using index, pop and insert
+cols.insert(0, cols.pop(cols.index('sequence')))
+normalized_probs = normalized_probs[cols]
+normalized_probs["predicted_substrate"] = normalized_probs.iloc[:,1:].idxmax(axis=1)
+normalized_probs["predicted_substrate"] = normalized_probs["predicted_substrate"].map(lambda x: x.split("_")[-1])
+
+outer_catch_df = pd.melt(outer_catch_df, id_vars = ["sequence"])
+outer_catch_df = outer_catch_df.reset_index(drop = True)
+outer_catch_df["substrate"] = outer_catch_df["variable"].map(lambda x: x.split("_")[-2])
+outer_catch_df["order"] = outer_catch_df["variable"].map(lambda x: x.split("_")[-1])
+outer_catch_df = outer_catch_df.sort_values(["sequence", "substrate"], ascending = [True, True])
+outer_catch_df["yes_or_no"] = outer_catch_df["value"].map(lambda x: 1 if x > 0.5 else 0)
+outer_catch_df_summary = outer_catch_df.groupby(["sequence", "substrate"]).aggregate({"value": np.mean, "yes_or_no": np.sum})
+outer_catch_df_summary.columns = ["probability_score", "successes"]
+# outer_catch_df = pd.concat([outer_catch_df, outer_catch_df_summary])
+
+def p_value_function(successes, trials= 15, prob = 0.5): 
+    prob = binom.cdf(successes, trials, prob)
     return 1-prob
 
-p_value = uhgg_data["successes"].map(p_value_function)
+outer_catch_df_summary["p_value"] = outer_catch_df_summary["successes"].map(p_value_function)
+outer_catch_df_summary = outer_catch_df_summary.drop("successes", 1)
 
-uhgg_data["p_value"] = p_value
-
-uhgg_data.to_csv("Data/Output/Predictions/Predictions_UHGG_with_probability_and_p_values.csv", index = False)
-uhgg_data["predicted_substrate"].value_counts()
+outer_catch_df_summary.to_csv("Data/Output/Predictions/Predictions_UHGG_with_probability_and_p_values_Blast_Style.csv", index = False)
+normalized_probs["predicted_substrate"].value_counts()

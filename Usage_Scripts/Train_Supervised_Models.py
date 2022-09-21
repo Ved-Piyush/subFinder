@@ -31,13 +31,13 @@ data = pd.concat([data, data_unknown], ignore_index = True)
 order = list(data["updated_substrate (07/01/2022)"].value_counts().index)
 
 ## BOW model
-accuracy_bow, avg_accuracy_bow, avg_std_dev_bow, avg_overall_report_bow, fig_bow, fig1_bow, best_params_bow = balanced_random_forest_BOW(data, order)
+accuracy_bow, avg_accuracy_bow, avg_std_dev_bow, avg_overall_report_bow, fig_bow, fig1_bow, model_lists_bow = balanced_random_forest_BOW(data, order)
 
 
 ## Doc2Vec_DM model
 ## read the trained doc2vec DM model
 trained_doc2vec_dm = gensim.models.doc2vec.Doc2Vec.load(r"Embedding_Models//doc2vec_dm") 
-accuracy_doc2vec_dm, avg_accuracy_doc2vec_dm, avg_std_dev_doc2vec_dm, avg_overall_report_doc2vec_dm, fig_doc2vec_dm, fig1_doc2vec_dm, best_params_doc2vec_dm = balanced_random_forest_Doc2Vec_DM(data, order,trained_doc2vec_dm)
+accuracy_doc2vec_dm, avg_accuracy_doc2vec_dm, avg_std_dev_doc2vec_dm, avg_overall_report_doc2vec_dm, fig_doc2vec_dm, fig1_doc2vec_dm, model_lists_doc2vec_dm = balanced_random_forest_Doc2Vec_DM(data, order,trained_doc2vec_dm)
 
 
 ## Doc2Vec_DBOW model
@@ -49,7 +49,7 @@ accuracy_doc2vec_dbow, avg_accuracy_doc2vec_dbow, avg_std_dev_doc2vec_dbow, avg_
 ## read the trained Word2Vec_CBOW model
 trained_word2vec_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//word2vec_cbow") 
 vocab_cbow = set(trained_word2vec_cbow.wv.index_to_key)
-accuracy_word2vec_cbow, avg_accuracy_word2vec_cbow, avg_std_dev_word2vec_cbow, avg_overall_report_word2vec_cbow, fig_word2vec_cbow, fig1_word2vec_cbow, best_params_word2vec_cbow = balanced_random_forest_Word2Vec_CBOW(data, order,trained_word2vec_cbow, vocab_cbow)
+accuracy_word2vec_cbow, avg_accuracy_word2vec_cbow, avg_std_dev_word2vec_cbow, SSS, fig_word2vec_cbow, fig1_word2vec_cbow, best_params_word2vec_cbow = balanced_random_forest_Word2Vec_CBOW(data, order,trained_word2vec_cbow, vocab_cbow)
 
 ## Word2Vec_SG model
 ## read the trained Word2Vec_SG model
