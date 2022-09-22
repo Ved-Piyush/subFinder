@@ -203,7 +203,8 @@ outer_catch_df["order"] = outer_catch_df["variable"].map(lambda x: x.split("_")[
 outer_catch_df = outer_catch_df.sort_values(["sequence", "substrate"], ascending = [True, True])
 outer_catch_df["yes_or_no"] = outer_catch_df["value"].map(lambda x: 1 if x > 0.5 else 0)
 outer_catch_df_summary = outer_catch_df.groupby(["sequence", "substrate"]).aggregate({"value": np.mean, "yes_or_no": np.sum})
-outer_catch_df_summary.columns = ["probability_score", "successes"]
+outer_catch_df_summary = outer_catch_df_summary.reset_index()
+outer_catch_df_summary.columns = ["sequence", "substrate", "probability_score", "successes"]
 # outer_catch_df = pd.concat([outer_catch_df, outer_catch_df_summary])
 
 def p_value_function(successes, trials= 15, prob = 0.5): 
@@ -212,6 +213,8 @@ def p_value_function(successes, trials= 15, prob = 0.5):
 
 outer_catch_df_summary["p_value"] = outer_catch_df_summary["successes"].map(p_value_function)
 outer_catch_df_summary = outer_catch_df_summary.drop("successes", 1)
+outer_catch_df_summary = outer_catch_df_summary.sort_values(["sequence", "p_value"], ascending = [True, True])
+outer_catch_df_summary = outer_catch_df_summary.reset_index(drop = True)
 
 outer_catch_df_summary.to_csv("Data/Output/Predictions/Predictions_UHGG_with_probability_and_p_values_Blast_Style.csv", index = False)
 normalized_probs["predicted_substrate"].value_counts()

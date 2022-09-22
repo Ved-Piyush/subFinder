@@ -4,7 +4,7 @@
 K = 10
 
 from sklearn.model_selection import StratifiedKFold
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 from imblearn.ensemble import BalancedRandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.metrics import classification_report
@@ -15,8 +15,8 @@ from sklearn.model_selection import GridSearchCV
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.multiclass import OneVsRestClassifier
 # from Codes.embedding_modules import doc2vec_dm, doc2vec_dbow, word2vec_cbow, word2vec_sg, fasttext_sg, fasttext_cbow
-
 
 
 skf_outer = StratifiedKFold(n_splits=K, random_state=42, shuffle = True)
@@ -26,7 +26,7 @@ def balanced_random_forest_BOW(data, order):
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # model_lists = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -36,29 +36,29 @@ def balanced_random_forest_BOW(data, order):
 
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
         clf_one_vs_rest = Pipeline([('vectorizer',CountVectorizer(tokenizer=lambda x: str(x).replace("|", ",").split(','), 
                                                               lowercase = False)), 
                                 
-                                ('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+                                ('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced")))
                                 ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100]}
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(X_train["cazymes_predicted_dbcan"].values, X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(X_train["cazymes_predicted_dbcan"].values, X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
-    
-    
+        # print(clf_one_vs_rest.best_params_)
+        # print(clf_one_vs_rest.best_score_)
+        # model_lists.append(clf_one_vs_rest)
     
     
-        y_test_pred = gs_one_vs_rest.predict(X_test["cazymes_predicted_dbcan"].values)
+    
+    
+        y_test_pred = clf_one_vs_rest.predict(X_test["cazymes_predicted_dbcan"].values)
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -131,7 +131,7 @@ def balanced_random_forest_BOW(data, order):
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
 
 
 def balanced_random_forest_Doc2Vec_DM(data, order, trained_doc2vec_dm): 
@@ -139,7 +139,7 @@ def balanced_random_forest_Doc2Vec_DM(data, order, trained_doc2vec_dm):
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # best_params = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -161,24 +161,24 @@ def balanced_random_forest_Doc2Vec_DM(data, order, trained_doc2vec_dm):
            X_test_doc_vectors.append(trained_doc2vec_dm.infer_vector(test_item).tolist())    
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+        clf_one_vs_rest = Pipeline([('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced")))
                                     ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
     
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_score_)
+        # best_params.append(clf_one_vs_rest)
     
-        y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+        y_test_pred = clf_one_vs_rest.predict(np.array(X_test_doc_vectors))
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -250,7 +250,7 @@ def balanced_random_forest_Doc2Vec_DM(data, order, trained_doc2vec_dm):
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
 
 
 def balanced_random_forest_Doc2Vec_DBOW(data, order, trained_doc2vec_dbow): 
@@ -258,7 +258,7 @@ def balanced_random_forest_Doc2Vec_DBOW(data, order, trained_doc2vec_dbow):
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # best_params = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -280,24 +280,24 @@ def balanced_random_forest_Doc2Vec_DBOW(data, order, trained_doc2vec_dbow):
            X_test_doc_vectors.append(trained_doc2vec_dbow.infer_vector(test_item).tolist())    
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+        clf_one_vs_rest = Pipeline([('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced")))
                                     ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100,300, 500]}
     
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_score_)
+        # best_params.append(gs_one_vs_rest.best_params_)
     
-        y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+        y_test_pred = clf_one_vs_rest.predict(np.array(X_test_doc_vectors))
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -369,7 +369,7 @@ def balanced_random_forest_Doc2Vec_DBOW(data, order, trained_doc2vec_dbow):
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
 
 
 
@@ -378,7 +378,7 @@ def balanced_random_forest_Word2Vec_CBOW(data, order, trained_word2vec_cbow, voc
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # best_params = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -417,23 +417,23 @@ def balanced_random_forest_Word2Vec_CBOW(data, order, trained_word2vec_cbow, voc
     
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+        clf_one_vs_rest = Pipeline([('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced")))
                                     ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_score_)
+        # best_params.append(gs_one_vs_rest.best_params_)
     
-        y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+        y_test_pred = clf_one_vs_rest.predict(np.array(X_test_doc_vectors))
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -505,7 +505,7 @@ def balanced_random_forest_Word2Vec_CBOW(data, order, trained_word2vec_cbow, voc
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
 
 
 
@@ -514,7 +514,7 @@ def balanced_random_forest_Word2Vec_SG(data, order, trained_word2vec_sg, vocab_s
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # best_params = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -553,23 +553,23 @@ def balanced_random_forest_Word2Vec_SG(data, order, trained_word2vec_sg, vocab_s
     
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
                                     ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_score_)
+        # best_params.append(gs_one_vs_rest.best_params_)
     
-        y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+        y_test_pred = clf_one_vs_rest.predict(np.array(X_test_doc_vectors))
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -641,14 +641,14 @@ def balanced_random_forest_Word2Vec_SG(data, order, trained_word2vec_sg, vocab_s
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
     
 def balanced_random_forest_FastText_SG(data, order, trained_fasttext_sg): 
     cm_all = np.zeros((len(order), len(order)))
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # best_params = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -682,23 +682,23 @@ def balanced_random_forest_FastText_SG(data, order, trained_fasttext_sg):
     
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
                                     ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_score_)
+        # best_params.append(gs_one_vs_rest.best_params_)
     
-        y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+        y_test_pred = clf_one_vs_rest.predict(np.array(X_test_doc_vectors))
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -770,7 +770,7 @@ def balanced_random_forest_FastText_SG(data, order, trained_fasttext_sg):
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
 
 
 
@@ -779,7 +779,7 @@ def balanced_random_forest_FastText_CBOW(data, order, trained_fasttext_cbow):
     unraveled_positions = []
     overall_acc = 0
     report_over_k = np.zeros((3, len(order)))
-    best_params = []
+    # best_params = []
 
     for train_index, test_index in tqdm(skf_outer.split(data["cazymes_predicted_dbcan"],
                                               data["updated_substrate (07/01/2022)"].values)):
@@ -813,23 +813,23 @@ def balanced_random_forest_FastText_CBOW(data, order, trained_fasttext_cbow):
     
     
     
-        class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["updated_substrate (07/01/2022)"].value_counts()/ X_train["updated_substrate (07/01/2022)"].value_counts().sum()))
     
-        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+        clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
                                     ])
     
-        parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
+        # parameters_one_vs_rest = {"vr__n_estimators": [100,300,500]}
     
 
-        gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+        # gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
     
-        gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
+        clf_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["updated_substrate (07/01/2022)"].values)
     
-        print(gs_one_vs_rest.best_params_)
-        print(gs_one_vs_rest.best_score_)
-        best_params.append(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_params_)
+        # print(gs_one_vs_rest.best_score_)
+        # best_params.append(gs_one_vs_rest.best_params_)
     
-        y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+        y_test_pred = clf_one_vs_rest.predict(np.array(X_test_doc_vectors))
     
     
         cm = confusion_matrix(X_test["updated_substrate (07/01/2022)"], y_test_pred, labels = order, normalize = 'true')
@@ -901,5 +901,5 @@ def balanced_random_forest_FastText_CBOW(data, order, trained_fasttext_cbow):
     plt.xlabel("Substrate", fontsize = 20)
     # plt.show()
     
-    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1, best_params
+    return accuracy, avg_accuracy, avg_std_dev, avg_overall_report, fig, fig1
     
