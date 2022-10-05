@@ -56,7 +56,7 @@ model_sg =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//word2vec_sg")
 model_fasttext_sg =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//fasttext_sg") 
 model_fasttext_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//fasttext_cbow") 
 
-featurizer = "word2vec_cbow"
+featurizer = "countvectorizer"
 
 avg_acc, avg_class_acc, std_err_avg_acc, std_err_avg_classwise_acc, overall_report,  model, params_best, fig, fig2, fig3 = run_end_to_end(top_k, data, featurizer, K, known_unknown, 
-                                                                                                                                          model_cbow)
+                                                                                                                                          None)

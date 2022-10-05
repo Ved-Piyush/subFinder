@@ -27,7 +27,11 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     
     order = list(data["high_level_substr"].value_counts().index)
     
-    vec_size = model.wv.vectors.shape[1]
+    
+    NoneType = type(None)
+    
+    if type(model) != NoneType:
+        vec_size = model.wv.vectors.shape[1]
     
     if known_unknown == True:
         data = pd.concat([data[["sig_gene_seq", "high_level_substr"]], 
@@ -44,8 +48,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     avg_class_acc_k_list = []
 #     avg_class_acc_k = 0
         
-    for train_index, test_index in tqdm(skf_outer.split(data["sig_gene_seq"],
-                                              data["high_level_substr"].values)):
+    for train_index, test_index in skf_outer.split(data["sig_gene_seq"],
+                                              data["high_level_substr"].values):
         X_train, X_test = data.iloc[train_index,:], data.iloc[test_index,:]
     
         class_weights = dict(1/(X_train["high_level_substr"].value_counts()/ X_train["high_level_substr"].value_counts().sum()))
@@ -59,7 +63,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
                                 ('vr', BalancedRandomForestClassifier(n_jobs = 7))
                                   ])
             
-            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 0)
             
         elif featurizer in ["doc2vec_dbow", "doc2vec_dm"]:
             
@@ -74,6 +78,12 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             for test_item in X_test["sig_gene_seq"].values:
                 test_item = test_item.replace("|", ",").split(",")
                 X_test_doc_vectors.append(model.infer_vector(test_item).tolist())   
+                
+            clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+                                                    ])
+            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 0)
+                        
+            
                 
                 
         elif featurizer in ["word2vec_cbow", "word2vec_sg", "fasttext_cbow", "fasttext_sg"]: 
@@ -113,7 +123,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
                     
             clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
                                                 ])
-            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 10)
+            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 0)
                     
         
         else:
@@ -172,7 +182,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
     plt.yticks(weight = "bold", fontsize = 15)
-    plt.show()
+    # plt.show()
     
     # average class 
 #     avg_of_avg_class_acc_per_fold = np.mean(np.diag(df_cm))
@@ -189,7 +199,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.title("Standard deviation for confusion matrix for the test set low level", fontsize = 20)
     plt.xlabel("Predicted Label", fontsize = 20)
     plt.ylabel("True Label", fontsize = 20)
-    plt.show()
+    # plt.show()
 
 
     std_err_avg_acc = np.std(overall_acc_list)
@@ -208,7 +218,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.title("Classification Report", fontsize = 20)
     plt.ylabel("Metric Name", fontsize = 20)
     plt.xlabel("Substrate", fontsize = 20)
-    plt.show()
+    # plt.show()
     
     
     #     overall_report
