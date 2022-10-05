@@ -1,0 +1,655 @@
+PULid	sig_gene_seq	low_level_substr	high_level_substr	Pub_year	degrad_biosyn
+PUL0001	GH1,8.A.49,CE2,GH130,GH130,3.A.1,3.A.1,SBP_bac_1,LacI,GH36,GH113	beta-mannan	beta-mannan	2019	degradation
+PUL0002	GH16	lichenan	beta-glucan 	1996	degradation
+PUL0003	GH30_8,GH43_16|CBM6	xylan	xylan	2016	degradation
+PUL0004	4.A.1,GH1	glucose,cellobiose,maltose	multiple_substrates	2016	degradation
+PUL0005	GH94,GH3	beta-glucan,sophorose,laminaribiose	multiple_substrates	2016	degradation
+PUL0006	GH1,SIS|HTH_6,3.A.1,8.A.59,HTH_18|Response_reg|HTH_AraC,3.A.1,3.A.1,3.A.1	galactan	galactan	2014	degradation
+PUL0007	GH53,2.A.2,GH42,LacI	galactan	galactan	2016	degradation
+PUL0008	HTH_AraC,PfkB,2.A.1,GH32,GH32,8.A.46,1.B.14,GH32	fructan	fructan	2017	degradation
+PUL0009	LacI,PfkB,PL8,3.A.1,3.A.1,3.A.1,3.A.1,PL8,GH88	glycosaminoglycan	glycosaminoglycan	2017	degradation
+PUL0010	GH43_11,GH10,9.B.28,GntR,PfkB,GH39,GH67,3.A.1,3.A.1,3.A.1,GH10,GH52,CE4,3.A.1,3.A.1,SBP_bac_1,HTH_AraC,8.A.59,GH51,3.A.1,3.A.1,3.A.1,GntR,3.A.1,3.A.1,3.A.1	xylan	xylan	2017	degradation
+PUL0011	GH48,GH8,GH9|CBM3,CBM4|GH9	cellulose	cellulose	1996	degradation
+PUL0012	GH94,GH20,GH9,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,HATPase_c|HisKA|PAS|Response_reg	chitin	chitin	2017	degradation
+PUL0013	3.A.1,8.A.59,HTH_AraC,3.A.1,3.A.1,3.A.1,GntR,GH43_5,SBP_bac_1,3.A.1,3.A.1,GH43_4,GH51,GH51,GH127,8.A.59,HTH_AraC,SBP_bac_1,3.A.1,3.A.1,CE4,GH52,GH10,3.A.1,3.A.1,GH67,GH39,PfkB,GntR,9.B.28,AAA,GH43_11	arabinan	galactan	2011	degradation
+PUL0014	HTH_DeoR,HTH_AraC,8.A.59,PL1_6,GH105,SBP_bac_1,3.A.1	pectin	pectin	2018	degradation
+PUL0015	SIS,GH9,4.A.3	cellobiose	mono/di/trisaccharide	2017	degradation
+PUL0016	4.A.3,4.A.3,HTH_6|SIS,4.A.3,GH1	cellobiose	mono/di/trisaccharide	2017	degradation
+PUL0017	GH94,3.A.1,3.A.1,SBP_bac_1,HTH_AraC,8.A.59,SBP_bac_1,3.A.9	cellobiose	mono/di/trisaccharide	2017	degradation
+PUL0018	CBM70|PL8_1,PfkB,4.A.6,GH88,4.A.6,4.A.6,4.A.6,PL12_1	glycosaminoglycan	glycosaminoglycan	2012	degradation
+PUL0019	Mga|HTH_11,4.A.3,4.A.3,4.A.3,GH4	lichenan,cellobiose,beta-glucoside	multiple_substrates	1997	degradation
+PUL0020	PL12_1,4.A.6,4.A.6,4.A.6,GH88,TrmB,PfkB,PL8	glycosaminoglycan	glycosaminoglycan	2018	degradation
+PUL0021	PL12_1,4.A.6,4.A.6,4.A.6,GH88,CHASE2,PfkB,DeoRC	glycosaminoglycan	glycosaminoglycan	2018	degradation
+PUL0022	Mga|HTH_11,GH1,4.A.3,4.A.3	cellobiose	mono/di/trisaccharide	2018	degradation
+PUL0023	GH1,4.A.3,4.A.3	cellobiose	mono/di/trisaccharide	2018	degradation
+PUL0024	GH32,4.A.1,LacI,3.A.1,3.A.1,HTH_1,HTH_3,2.A.40	kestose	fructan	2020	degradation
+PUL0025	8.A.3,1.B.18,GT2,GT4,GT2,GT2,9.B.18	capsule polysaccharide	capsule polysaccharide	2020	biosynthesis
+PUL0026	PfkB,PfkB,1.B.14,GH35	ribose	mono/di/trisaccharide	2020	degradation
+PUL0027	PL5_1	alginate	algal glycans	1999	biosynthesis
+PUL0028	MerR,CBM40|GH33,3.A.1,3.A.1,SBP_bac_1,HTH_AraC,GH1,GH140	mucin	glycoprotein	2013	degradation
+PUL0029	3.A.1,3.A.1,MarR,GH43_24,GH30_5,2.A.3,3.A.1,HTH_11,2.A.3,GH146,GH43_22|GH43_34,GH43_22|GH43_26,GH43_27,GH43_22,GH43_22,9.B.28,3.A.1,3.A.1,LacI,3.A.1	arabinogalactan	galactan	2019	degradation
+PUL0030	GH130,LacI,GH130,SBP_bac_1,GH27,3.A.1,3.A.1,CE7	galactomannan	beta-mannan	2016,2018,2018	degradation
+PUL0031	GH32,2.A.1,LacI	sucrose	mono/di/trisaccharide	2006	degradation
+PUL0032	LacI,2.A.1,GH13_18	sucrose	mono/di/trisaccharide	2006	degradation
+PUL0033	LacI,4.A.1,GH13_29	trehalose	mono/di/trisaccharide	2003	degradation
+PUL0034	CE10,1.B.35	pectin	pectin	2003	degradation
+PUL0035	3.A.1,3.A.1,3.A.1,3.A.1,PL2_2	pectin	pectin	2001	degradation
+PUL0036	8.A.3,1.B.18,PL12,GT4,9.B.18,Aminotran_1_2,9.B.18	emulsan	-	2001	biosynthesis
+PUL0037	9.B.67,GH13,3.A.1,3.A.1,3.A.1,HTH_18|AraC_binding	raffinose	mono/di/trisaccharide	2019	degradation
+PUL0038	SBP_bac_1,3.A.1,3.A.1,GH42,GH36	melibiose,galactose	multiple_substrates	2000	degradation
+PUL0039	GH36	melibiose,galactose	multiple_substrates	2000	degradation
+PUL0040	GH9,GH9|CBM3,GH5_17,GH9,PL11,GH5_1	cellulose	cellulose	2003,1992,2002	degradation
+PUL0041	4.A.1,GH1	cellobiose	mono/di/trisaccharide	1997	degradation
+PUL0042	GH13_4,LacI	sucrose	mono/di/trisaccharide	2018	degradation
+PUL0043	8.A.3,1.B.18,GT4,9.B.18,9.B.146,9.B.18	capsule polysaccharide	capsule polysaccharide	2018	biosynthesis
+PUL0044	GH43_10,GH3,GH43_12,GH31,GH97,GH43_29|CBM6,GH43_12,1.B.14,1.B.14,GH30_8,GH98|CBM35,GH115,CE6|CE1,GH43_29|CBM6,HTH_AraC,GH95,HTH_8|HTH_AraC,GH30,1.B.14,GH115	arabinoxylan	xylan	2015,2020	degradation
+PUL0045	GH67,GH43_1,GH10,2.A.2,GH10,1.B.14,HTH_AraC	arabinoxylan	xylan	2015	degradation
+PUL0046	GT2	O-antigen	O-antigen	2018	biosynthesis
+PUL0047	2.A.66,GT4,AraC_binding,3.A.1,GT4|GT4	O-antigen	O-antigen	2020	biosynthesis
+PUL0048	GH13_29,4.A.1,GntR	trehalose	mono/di/trisaccharide	2018	degradation
+PUL0049	GH43_17,Aminotran_1_2,PALP,GH26,GH16,3.A.1	beta-glucan,galactomannan	multiple_substrates	2018	degradation
+PUL0050	GH5_4,GH26,GH130,2.A.2,GH3,GH94	cellulose,galactomannan	multiple_substrates	2018	degradation
+PUL0051	2.A.28,PL6|PL6_1,PL17_2|PL17,1.B.14,8.A.46	alginate	algal glycans	2018	degradation
+PUL0052	1.B.14,GntR,PL6|PL6_1,PL17_2|PL17,AraC_binding,2.A.1,PfkB	alginate	algal glycans	2018	degradation
+PUL0053	GntR,PL6,PL17_2|PL17,2.A.1	alginate	algal glycans	2018	degradation
+PUL0054	PL6|PL6_1,PL17_2|PL17,AraC_binding,2.A.1,PfkB	alginate	algal glycans	2018	degradation
+PUL0055	PL17_2|PL17,PL6|PL6_1,8.A.46,1.B.14,GntR	alginate	algal glycans	2018	degradation
+PUL0056	PL6|PL6_1,1.B.14,PL17_2|PL17	alginate	algal glycans	2018	degradation
+PUL0057	GT4,GT4	O-antigen	O-antigen	2018	biosynthesis
+PUL0058	CBM48|GH13_9,GT5,GT35	glycogen	alpha-glucan	1994	biosynthesis
+PUL0059	2.A.66,GT2	O-antigen	O-antigen	2018	biosynthesis
+PUL0060	2.A.66,8.A.3,1.B.18,GT2,GT2,GT4,GT2,9.B.18,2.A.14,GntR	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0061	8.A.3,1.B.18,GT2,GT2,GT4,GT2,9.B.18,2.A.14,GT4,CE4	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0062	8.A.3,1.B.18,GT2,GT2,GT4,GT2,9.B.18,2.A.14	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0063	GH3,GH2,GH31,HTH_AraC,GH9,1.B.14,GH5_4,GH43_12,GH43_12,GH3	xyloglucan	xyloglucan	2019	degradation
+PUL0064	1.B.14,GH5_4,Reg_prop,HTH_AraC,GH31,GH2,GH3	xyloglucan	xyloglucan	2019	degradation
+PUL0065	1.B.14,8.A.46,GH43_12,GH5_4,HTH_AraC,GH31,GH2,GH3,GH95	xyloglucan	xyloglucan	2019	degradation
+PUL0066	1.B.14,GH43_12,GH5_4,HTH_AraC,GH31,GH2,GH3,GH95	xyloglucan	xyloglucan	2019	degradation
+PUL0067	GH2,GH5_4,8.A.46,1.B.14,GH31,HTH_AraC,GH95,GH3,GH43_12	xyloglucan	xyloglucan	2019	degradation
+PUL0068	LacI,GH36,2.A.1,GH32	raffinose	mono/di/trisaccharide	1994	degradation
+PUL0069	8.A.3,1.B.18,9.B.18,Aminotran_1_2,GT0,GT2,9.B.18,2.A.14	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0070	2.A.66,8.A.3,1.B.18,9.B.18,Aminotran_1_2,GT52,GT14,GT2,9.B.18,2.A.14,GT25,GT4,4.D.1,CE4	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0071	2.A.66,8.A.3,1.B.18,9.B.18,Aminotran_1_2,2.A.66,GT14,GT2,9.B.18,2.A.14,GT25,GT4,4.D.1,CE4	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0072	2.A.14,9.B.18,GT2,GT0,Aminotran_1_2,9.B.18,1.B.18,8.A.3	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0073	2.A.14,9.B.18,GT2,Aminotran_1_2,9.B.18,1.B.18,8.A.3	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0074	GntR,2.A.14,9.B.18,GT2,GT4,2.A.66,1.B.18,8.A.3	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0075	8.A.3,1.B.18,2.A.66,GT2,GT4,GT2,9.B.18,2.A.14,GntR	capsule polysaccharide	capsule polysaccharide	2019	biosynthesis
+PUL0076	GT4,CE4	capsule polysaccharide,outer core capsule polysaccharide	multiple_substrates	2019	biosynthesis
+PUL0077	GT4,CE4	capsule polysaccharide,outer core capsule polysaccharide	multiple_substrates	2019	biosynthesis
+PUL0078	3.A.1,3.A.1,MarR,CBM22|GH10	xylan,xylose	multiple_substrates	1996	degradation
+PUL0079	CE4,GT4,GT2	capsule polysaccharide,outer core capsule polysaccharide	multiple_substrates	2019	biosynthesis
+PUL0080	CE4,GT4,GT2	capsule polysaccharide,outer core capsule polysaccharide	multiple_substrates	2019	biosynthesis
+PUL0081	MarR,AraC_binding,PfkB,2.A.21,1.B.35,PL9_1,2.A.21,PL22|PL22	oligogalacturonide	pectin	2019	degradation
+PUL0082	LacI,SBP_bac_1,3.A.1,3.A.1,GH4	melibiose,raffinose-oligosaccharide,stachyose	multiple_substrates	2019	degradation
+PUL0083	CBM3|cohesin|cohesin|cohesin|cohesin|cohesin|cohesin,GH48,GH8,GH9|CBM3,CBM4|GH9,GH9,GH9|CBM3,GH5_17,GH9,GH5_7,GH5_1	lignocellulose	cellulose	2019	degradation
+PUL0084	GH10|CBM6,GH43_29|CBM6,CE1|CBM6,GH43_10|CBM6,GH62|CBM6,GH43_29|CBM6,GH27|CBM6,GH59|CBM6,GH62|CBM6|CE6,GH95|CBM32,CE1|CBM6,GH30_8|CBM6	lignocellulose	cellulose	2019	degradation
+PUL0085	GH26,GH9,GH9	lignocellulose	cellulose	2019	degradation
+PUL0086	PL10_1,CE8,PL11	lignocellulose	cellulose	2019	degradation
+PUL0087	GH9|CBM3|CBM3,GH9|CBM3	lignocellulose	cellulose	2019	degradation
+PUL0088	HTH_AraC,GH36,3.A.1,3.A.1,3.A.1,GH13_18,3.A.1,8.A.9	raffinose,melibiose,isomaltotriose	multiple_substrates	1996	degradation
+PUL0089	GH5_4	lignocellulose	cellulose	2019	degradation
+PUL0090	GT4,GT4,9.B.18,GT4	O-antigen	O-antigen	2019	biosynthesis
+PUL0091	CE9,GH2,GH92,GH20,GH20,GH2	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0092	GH20,GH2,GH20,GH33,8.A.46,1.B.14	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0093	2.A.1,PIG-L,HTH_AraC,2.A.6,3.A.1,1.C.105,HATPase_c,Trans_reg_C,CE9,GH2,GH92,GH20,GH20,GH2	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0094	3.A.1,HD,1.B.42,1.B.14,GH27,1.B.14,8.A.46,GH33,GH20,GH2,GH20	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0095	1.B.42,1.B.14,GH27,1.B.14,8.A.46,GH33,GH20,GH2,GH20	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0096	1.B.14,8.A.46,GH33,GH20,GH2,GH20,GH20,GH92,GH2,CE9,3.A.1,HTH_AraC,GH29,GH97	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0097	1.B.14,8.A.46,GH33,GH20,GH2,GH20,GH20,GH92,GH2,CE9,3.A.1	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0098	8.A.46,1.B.14,GH33,2.A.1,MarR,HTH_3	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0099	CBM27|GH26|CBM23,GH3,GH3	beta-mannan	beta-mannan	2019	degradation
+PUL0100	GH4,HTH_AraC,4.A.3,4.A.3,4.A.3	chitobiose	mono/di/trisaccharide	1997	degradation
+PUL0101	CBM67|GH78,HTH_AraC,2.A.7,2.A.4,GH3,GH115,GH97	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0102	GH20,GH29,8.A.46,1.B.14,GH33,MarR,HTH_3,CBM67|GH78,HTH_AraC	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0103	2.A.4,2.A.7,HTH_AraC,CBM67|GH78,HTH_3,MarR,GH33,HTH_11	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0104	1.B.14,HTH_11,GH33,MarR,HTH_3,CBM67|GH78,HTH_AraC,2.A.7,2.A.4	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0105	GH33,MarR,HTH_3,CBM67|GH78,HTH_AraC,2.A.7,2.A.4,GH3,GH115,GH97	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0106	Pribosyltran,Trans_reg_C,1.B.14,GH20,GH2,2.A.115,GH2,GH2	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0107	GerE,GH1,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,Response_reg|HTH_18	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0108	Trans_reg_C,HisKA,3.A.1,GH2,2.A.21,Sigma70_r2|Sigma70_r4_2,GH3	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0109	Trans_reg_C,HisKA,3.A.1,GH2,2.A.21,Sigma70_r4_2|Sigma70_r2	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0110	Trans_reg_C,HisKA,3.A.1,GH2,2.A.21,Sigma70_r4_2|Sigma70_r2	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0111	HTH_AraC,GH4,2.A.2	melibiose	mono/di/trisaccharide	1998	degradation
+PUL0112	9.B.156,1.C.39,Pribosyltran,Trans_reg_C,1.B.14,GH20,GH2,2.A.115,GH2,GH2	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0113	GerE,GH1,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,HTH_AraC	O-glycan,N-glycan	multiple_substrates	2019	degradation
+PUL0114	GH43_16|CBM6,GH10|CBM6,GH43_29|CBM6,CE1|CBM6,GH43_10|CBM6,GH62|CBM6,GH43_29|CBM6,GH146|CBM22,GH27|CBM6,GH59|CBM6,GH2|CBM6,GH62|CBM6|CE6,GH95|CBM32|CBM6,GH30_8|CBM6	arabinofuranose	mono/di/trisaccharide	2019	degradation
+PUL0115	GH33,GH20,GH2,GH20,GH20,GH2	N-glycan	N-glycan	2019	degradation
+PUL0116	GH20,TetR_N	N-glycan	N-glycan	2019	degradation
+PUL0117	GH92,GH130,GH163,8.A.46,1.B.14,1.B.14,8.A.46,1.B.14,8.A.46,GH20,FecR,GerE	N-glycan	N-glycan	2019	degradation
+PUL0118	GH3,GH158,GH16,1.B.14,GerE|Y_Y_Y	laminarin,beta-glucan	multiple_substrates	2020	degradation
+PUL0119	GH29|CBM32	N-glycan	N-glycan	2019	degradation
+PUL0120	GerE,FecR,1.B.14,8.A.46,GH18|CBM14	N-glycan,mucin	multiple_substrates	2019	degradation
+PUL0121	3.A.1,3.A.1,3.A.1,Fer4,GH13_23,GH1,AsnC_trans_reg,2.A.88	4-methylumbelliferyl 6-azido-6-deoxy-beta-D-galactoside	mono/di/trisaccharide	2019	degradation
+PUL0122	GH42,3.A.1,GH2,GH36	alpha-galactoside,beta-galactoside,raffinose,melibiose	multiple_substrates	1998	degradation
+PUL0123	1.C.113,3.A.1,GH63,3.A.1,LacI,9.B.34,CBM67|GH78,8.A.49,HTH_3	4-methylumbelliferyl 6-azido-6-deoxy-beta-D-galactoside	mono/di/trisaccharide	2019	degradation
+PUL0124	GH13_23,CbiA,GH1,2.A.1,2.A.119	4-methylumbelliferyl 6-azido-6-deoxy-beta-D-galactoside	mono/di/trisaccharide	2019	degradation
+PUL0125	HTH_AraC,GH16,1.B.14,8.A.46,GH3	beta-glucan	beta-glucan 	2019,2020	degradation
+PUL0126	LacI,PL7_5,1.B.14,SKI,PL6|PL6_1	alginate,ulvan	multiple_substrates	2019	degradation
+PUL0127	GntR,CBM32|PL7_5,1.B.14,PL6_3,PL7_5,2.A.1,PL6|PL6_1,2.A.1	alginate,ulvan	multiple_substrates	2019	degradation
+PUL0128	3.A.1,3.A.1,MarR,GH43_24,GH30_5,2.A.3,3.A.1,HTH_11,2.A.3,GH146,GH43_22|GH43_34,GH43_22|GH43_26,GH43_27,GH43_22,GH43_22,9.B.28,3.A.1,3.A.1,LacI,3.A.1	hemicellulose	hemicellulose	2019	degradation
+PUL0129	GH5_4,GH26,GH5_4,1.B.14,CE7,GH26,GH130,2.A.2	beta-mannan	beta-mannan	2018	degradation
+PUL0130	AraC_binding,3.A.1,3.A.1,GT4,GT4	O-antigen	O-antigen	2019	biosynthesis
+PUL0131	AraC_binding,3.A.1,3.A.1,Pkinase,GT4|GT4,GT4,GT4	O-antigen	O-antigen	2019	biosynthesis
+PUL0132	GH5_4,CBM4,1.B.14,1.B.14,HTH_AraC	hemicellulose	hemicellulose	2018	degradation
+PUL0133	2.A.66,Pyr_redox,GT2,GT2,9.B.18,8.A.3,8.A.3	exopolysaccharide	exopolysaccharide	2005	biosynthesis
+PUL0134	1.B.14,8.A.46,CE8,PL9_1,PfkB,2.A.56,2.A.56,2.A.56,LacI,GH28,GH105,GH43_10,GH28|PL9_1,CE12,CE10|CE8,CE12,PL10_1	pectin	pectin	2019	degradation
+PUL0135	CE12,1.B.14,GH28,GH105,GH105,GH43_10,LacI,2.A.56,2.A.56,2.A.56,PfkB,CE8,PL1_2	pectin	pectin	2019	degradation
+PUL0136	PfkB,2.A.56,2.A.56,2.A.56,LacI,CE8|PL1_5,PL1_2,GH105,GH105,GH28,1.B.14	pectin	pectin	2019	degradation
+PUL0137	2.A.2,GH2,LacI	lactose	mono/di/trisaccharide	2018	degradation
+PUL0138	GH36,3.A.1,3.A.1,3.A.1,GH36	raffinose,melibiose	multiple_substrates	2018	degradation
+PUL0139	3.A.1,3.A.1,3.A.1,MarR,3.A.1,LacI,GH51	arabinose	mono/di/trisaccharide	2018	degradation
+PUL0140	GH43_12,LacI,SBP_bac_1,3.A.1,3.A.1,GH43_11,GH43_10	xylose	mono/di/trisaccharide	2018	degradation
+PUL0141	LacI,GH13_18,2.A.1	sucrose	mono/di/trisaccharide	2018	degradation
+PUL0142	3.A.1,3.A.1,Peripla_BP_3|LacI,3.A.1,GH13_30	maltose	mono/di/trisaccharide	2018	degradation
+PUL0143	2.A.66,4.D.1,GT2,GT32,9.B.18	exopolysaccharide	exopolysaccharide	2018	degradation
+PUL0144	GH35,SIS,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,GH1,PIG-L,GH18	chitin	chitin	2005	degradation
+PUL0145	PL8_2,PL29,8.A.46,1.B.14,Response_reg|Reg_prop|HTH_18|HisKA|Y_Y_Y|HATPase_c,2.A.6,2.A.6,2.A.6,GH2,1.B.14,GH88,PL8_2	glycosaminoglycan,chondroitin sulfate	multiple_substrates	2018	degradation
+PUL0146	GH16,1.B.14,GntR,2.A.1,GntR	carrageenan	algal glycans	2018	degradation
+PUL0147	GH16,2.A.1,GntR,GntR,1.B.14,HTH_AraC,GH16,GH150	carrageenan	algal glycans	2018	degradation
+PUL0148	GH127,GH127,2.A.1,GH127,GH129,HTH_AraC	carrageenan	algal glycans	2018	degradation
+PUL0149	GH110,GH110,8.A.46,1.B.14	carrageenan	algal glycans	2018	degradation
+PUL0150	PL6|PL6_1,PL17_2|PL17,2.A.1,PfkB,PL6_3,1.B.14,GerE	alginate	algal glycans	2018	degradation
+PUL0151	PfkB,2.A.1,GntR,PL7,1.B.14,AraC_binding,PL17_2|PL17	alginate	algal glycans	2018,2020	degradation
+PUL0152	3.D.2,3.D.2,3.D.2,PfkB,2.A.1,PL6|PL6_1,GntR	alginate	algal glycans	2018	degradation
+PUL0153	GH1,4.A.3	lactose	mono/di/trisaccharide	2018	degradation
+PUL0154	4.A.3,4.A.3,GH1	lactose	mono/di/trisaccharide	2018	degradation
+PUL0155	GntR,3.A.1,3.A.1,3.A.1,3.A.1,PL15_1	alginate	algal glycans	2006	degradation
+PUL0156	GH2	lactose	mono/di/trisaccharide	2018	degradation
+PUL0157	4.A.3,GH1	lactose	mono/di/trisaccharide	2018	degradation
+PUL0158	4.A.3,4.A.3,GH1	lactose	mono/di/trisaccharide	2018	degradation
+PUL0159	GH2	lactose	mono/di/trisaccharide	2018	degradation
+PUL0160	2.A.1,GH92,GH92,GH43_34,GH125,CBM32,8.A.46,1.B.14,GH92,GH92,GH92,GH76,LacI,GH2,GH92,2.A.1	alpha-mannan	alpha-mannan	2018	degradation
+PUL0161	GH97,GH67,GH76,1.B.14,HTH_AraC,GH92,GH76,GH125,3.A.7	alpha-mannan	alpha-mannan	2018	degradation
+PUL0162	1.B.14,GH92,GH99,9.B.14	alpha-mannan	alpha-mannan	2018	degradation
+PUL0163	GH92,GH38|CBM32,GT32,GT32,GH130,GH125,GH76,GH92,HTH_AraC,1.B.14,GH76	alpha-mannan	alpha-mannan	2018	degradation
+PUL0164	CE2,GH3,GH5_7,GH26,GH130,2.A.21,GH26,HTH_AraC,GH5_2,1.B.14,8.A.46,GH27,GH9,GH26	beta-mannan	beta-mannan	2018	degradation
+PUL0165	GH9,GH27,8.A.46,1.B.14,GH5_2,HTH_AraC,GH26,2.A.21,GH130,GH26	beta-mannan	beta-mannan	2018	degradation
+PUL0166	GH13_10,8.A.46,1.B.14,LacI	starch	alpha-glucan	2006	degradation
+PUL0167	2.A.2,GH130,GH36,GH26,GH26,1.B.14,HTH_AraC	beta-mannan	beta-mannan	2018	degradation
+PUL0168	GH2,HTH_6,8.A.5	galactose	mono/di/trisaccharide	2019	degradation
+PUL0169	GH146,1.B.14,GH43_29,GH121,1.B.14	arabinofuranooligosaccharide	fructan	2018	degradation
+PUL0170	GH3,HTH_AraC,GH16,1.B.14,8.A.46,GH3	beta-glucan	beta-glucan 	2017	degradation
+PUL0171	GerE,FecR,1.B.14,8.A.46,GH18	N-glycan	N-glycan	2016	degradation
+PUL0172	GT2,3.A.1,4.D.1	O-antigen	O-antigen	2016	biosynthesis
+PUL0173	GT4,GT4,NUDIX,GT2	O-antigen	O-antigen	2016	biosynthesis
+PUL0174	GH31|CBM20,GH31|CBM35	starch	alpha-glucan	2016	degradation
+PUL0175	GH130,GH5_7,GH27	galactomannan	beta-mannan	2006	degradation
+PUL0176	GH31,GH15,3.A.1,3.A.1,3.A.1,MarR	isomaltose	mono/di/trisaccharide	2016	degradation
+PUL0177	4.D.1,2.A.66,GT4,9.B.18	O-antigen	O-antigen	2016	biosynthesis
+PUL0178	2.A.2,GH130,GH36,GH26,GH26,1.B.14,HTH_AraC	galactomannan	beta-mannan	2016,2011	degradation
+PUL0179	CE7,2.A.2,GH130,GH26,GH26,1.B.14,HTH_AraC	galactomannan	beta-mannan	2016	degradation
+PUL0180	2.A.38,TrkA_C,GH36,GH29,1.B.14,HTH_AraC,2.A.1,GH29,9.B.97,2.A.64	galactomannan	beta-mannan	2016,2011	degradation
+PUL0181	GT4,NUDIX,GT2	O-antigen	O-antigen	2016	biosynthesis
+PUL0182	GT2	O-antigen	O-antigen	2016	biosynthesis
+PUL0183	GT2	O-antigen	O-antigen	2016	biosynthesis
+PUL0184	GT4	O-antigen	O-antigen	2016	biosynthesis
+PUL0186	GH1,2.A.123,Mga|HTH_11,4.A.3,4.A.3	cellobiose	mono/di/trisaccharide	2007	degradation
+PUL0187	HTH_AraC,8.A.59,3.A.1,3.A.1,CBM54|GH16|CBM4|CBM4|CBM6|CBM4|CBM4,GH16,3.A.1	beta-glucan	beta-glucan 	2016	degradation
+PUL0188	9.B.18,Aminotran_1_2,GT0,2.A.66,GT2	O-antigen	O-antigen	2016	biosynthesis
+PUL0189	GH95,GH140,CBM67|GH78|GH33,GH28,CBM67|GH78,GH43_18,PL1_2,1.B.14,GH92	pectin	pectin	2016	degradation
+PUL0190	GH51,GH146,NUDIX,2.A.21,GH43_4,1.B.14,GH43_4,GH51,GH43_29	pectin	pectin	2016	degradation
+PUL0191	GH105,CE8,CE12|CE8,AAA,HTH_AraC,1.B.14,PL1_2,PL1_2	pectin	pectin	2016	degradation
+PUL0192	GH106,GH28,GH28,CE12,GH2,GH43_18|GH43_34|CBM32,GH42,GH28,1.B.14,1.B.14,1.B.14,PL11,PL26,CE12|CE12,GH105,PL11_1,GH105,HTH_AraC	pectin	pectin	2016	degradation
+PUL0193	GH2,PL11,GH28,GH117|GH117,HTH_AraC,1.B.14,8.A.46,PL11,GH28,GH105,1.B.14,1.B.14,GH28	pectin	pectin	2016	degradation
+PUL0194	GH20,GH38,GH125,GH92,GH29	N-glycan	N-glycan	2017	degradation
+PUL0195	3.A.23,4.A.3,4.A.3,4.A.3	cellobiose	mono/di/trisaccharide	2016	degradation
+PUL0196	GH20,GntR,SIS,CE9,9.B.207,4.A.6,4.A.6,4.A.6,4.A.6	lacto-n-triose	human milk oligosaccharide	2016	degradation
+PUL0197	GT35,GH77,LacI,3.A.1,3.A.1,3.A.1,3.A.1	maltose	mono/di/trisaccharide	2007	degradation
+PUL0198	2.A.66,GT2,GT2	O-antigen	O-antigen	2016	biosynthesis
+PUL0199	CBM16|CBM32|PL18,PL6,PL6,SBP_bac_3,PfkB,2.A.1,AraC_binding,PL17_2|PL17,PL6|PL6_1,PL7_5,GntR	alginate	algal glycans	2016	degradation
+PUL0200	GT2,GT2	O-antigen	O-antigen	2015	biosynthesis
+PUL0201	2.A.66,GT2	O-antigen	O-antigen	2015	biosynthesis
+PUL0202	GT4,NUDIX,GT2	O-antigen	O-antigen	2015	biosynthesis
+PUL0203	GH32,GH32,8.A.46,1.B.14,GH32	exopolysaccharide	exopolysaccharide	2015	degradation
+PUL0204	8.A.9,8.A.46,1.B.14,GH97,8.A.9	exopolysaccharide	exopolysaccharide	2015	degradation
+PUL0205	GH31,GH31,GH66,8.A.46,1.B.14	exopolysaccharide	exopolysaccharide	2015	degradation
+PUL0206	1.B.14,GH2	mucin	glycoprotein	2015	degradation
+PUL0207	PL12_1,4.A.6,4.A.6,4.A.6,GH88,4.A.6	N-glycan	N-glycan	2015	degradation
+PUL0208	GH18,AA10|CBM5|CBM5,GH18|CBM5|CBM5	chitin	chitin	2019	degradation
+PUL0209	LacI,1.B.3,GH42,GH53,3.A.1,3.A.1,3.A.1,3.A.1	galactan	galactan	2007	degradation
+PUL0210	PL8,PfkB,GH88,4.A.6,4.A.6,4.A.6,4.A.6,PL12_1	N-glycan	N-glycan	2015	degradation
+PUL0211	1.B.14,GH29,GH18,GH20,GH2,GH3,GH125,GH92,GH35	N-glycan	N-glycan	2015,2014	degradation
+PUL0212	3.A.3,GH2,9.B.36,LacI,SBP_bac_1,3.A.1,3.A.1	galactooligosaccharide	galactan	2015	degradation
+PUL0213	2.A.2,GH2,LacI,HTH_AraC	galactooligosaccharide	galactan	2015	degradation
+PUL0214	LacI,GH42,GH35,3.A.1,3.A.1,SBP_bac_1,3.A.1	galactooligosaccharide	galactan	2015	degradation
+PUL0215	GH31,GH35,1.B.14,GH95	xyloglucan	xyloglucan	2014	degradation
+PUL0216	peroxidase,PL5|PL7,LacI,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,PL15_1	alginate	algal glycans	2014	degradation
+PUL0217	GH130,3.A.1,3.A.1,3.A.1,LacI,GH5_36	galactomannan,glucomannan,glucose,mannose	multiple_substrates	2014	degradation
+PUL0218	GH51,GH146|GH97,NUDIX,2.A.21,GH43_4,1.B.14,1.B.14,HTH_AraC,GH43_4,GH51|GH43_29,AAA	arabinose,arabinan	multiple_substrates	2015	degradation
+PUL0219	4.A.6,GH32	fructooligosaccharide,fructan	multiple_substrates	2007	degradation
+PUL0220	GH30_1,GH17,GH3,GH149,GH16,8.A.46,1.B.14	laminarin	algal glycans	2015	degradation
+PUL0221	GH35,GH105,1.B.14	cellulose	cellulose	2013	degradation
+PUL0222	GH5_7,GH26,8.A.46,1.B.14	cellulose	cellulose	2013	degradation
+PUL0223	GH92,GH130,GH163,8.A.46,1.B.14	N-glycan	N-glycan	2013	degradation
+PUL0224	9.B.33,HTH_AraC,GH43_16|CBM6,GH10|CBM6,GH43_29|CBM6,CE1|CBM6,GH43_10|CBM6,GH62|CBM6,GH43_29|CBM6,GH146|CBM22,GH27|CBM6,GH59|CBM6,GH2|CBM6,GH62|CBM6|CE6,GH95|CBM32|CBM6,GH30_8|CBM6	cellulose	cellulose	2013	degradation
+PUL0225	HTH_8,GH16,GH117|GH117,GH2,GH2,2.A.1,GH50,GH105|GH154,GH16,GH86,GH86,1.B.14,HTH_AraC,GH29,GH16,1.B.14,GH2	porphyran	algal glycans	2012	degradation
+PUL0226	1.B.18,8.A.3,9.B.18,9.B.30,9.B.97,9.B.97,GT4,GT94,2.A.66,GT70,GT26	xanthan	exopolysaccharide	2013	biosynthesis
+PUL0227	GH67,GH3,8.A.59,HTH_AraC,3.A.1	xylan	xylan	2012	degradation
+PUL0228	GH43_4,1.B.14,1.B.14,HTH_AraC,GH43_4,GH51,GH43_29	arabinan	galactan	2012,2011	degradation
+PUL0229	HTH_AraC,8.A.59,3.A.1,3.A.1,3.A.1,GH67,GH10,GH43_12	aldouronate	-	2007	degradation
+PUL0230	3.A.1,3.A.1,3.A.1,3.A.1,HTH_12,GH65,CBM34|GH13_20,8.A.9,LacI	maltooligosaccharide	alpha-glucan	2012,2020	degradation
+PUL0231	GH1	beta-glucoside	mono/di/trisaccharide	2012	degradation
+PUL0232	3.A.1,3.A.1,3.A.1,GH36	raffinose	mono/di/trisaccharide	2014	degradation
+PUL0233	GH36,8.A.9,3.A.1,3.A.1,SBP_bac_1	melezitose	mono/di/trisaccharide	2014	degradation
+PUL0234	GerE,1.B.14,8.A.46,GH16,GH3,GH16	laminarin	algal glycans	2014	degradation
+PUL0235	PL7_5,PL6|PL6_1,PL7_5,PL17_2|PL17,AraC_binding,1.B.14,PL7,PL7,GntR,2.A.1,PfkB,LacI	alginate	algal glycans	2014	degradation
+PUL0236	GH13,GH13_36,GH65,2.A.2,LacI,1.B.14,GH13_7	alpha-glucan	alpha-glucan	2014	degradation
+PUL0237	HTH_3,4.D.1,2.A.50,PL5	exopolysaccharide	exopolysaccharide	2014	biosynthesis
+PUL0238	4.A.3,4.A.3,4.A.3,8.A.49,GntR,GH26	glucomannan	beta-mannan	2008	degradation
+PUL0239	GH26|GH5_4,GH5_7,1.B.14,HTH_AraC,2.A.2,GH130,GH26,CE7,GH36,GH3	cellulose	cellulose	2014	degradation
+PUL0240	GH31,GH9,GH26,1.B.14	cellulose	cellulose	2014	degradation
+PUL0241	1.B.14,GH5_4,HTH_AraC,GH36	cellulose	cellulose	2014	degradation
+PUL0242	GH31,GH5_4,GH26,1.B.14	cellulose	cellulose	2014	degradation
+PUL0243	HTH_AraC,GH5_38,GH94,2.A.2,1.B.14,8.A.46,GH36	cellulose	cellulose	2014	degradation
+PUL0244	GH20,GH33,8.A.46,1.B.14,2.A.1	sialic acid	mono/di/trisaccharide	2014	degradation
+PUL0245	GH98|CBM47|CBM47|CBM47,GH95,4.A.6,4.A.6,4.A.6,4.A.6,HTH_DeoR	fucose	mono/di/trisaccharide	2014	degradation
+PUL0246	CBM51|CBM51|GH98,GH36,GH36,GH29,3.A.1,3.A.1,3.A.1,HTH_DeoR	fucose	mono/di/trisaccharide	2014	degradation
+PUL0247	1.B.18,8.A.3,GT4,9.B.18,GT4,9.B.18,9.B.18	capsule polysaccharide	capsule polysaccharide	2013,2006	degradation
+PUL0248	9.B.18,9.B.18,PL12_3,8.A.3,1.B.18	capsule polysaccharide	capsule polysaccharide	2013	degradation
+PUL0249	SBP_bac_1,3.A.1,3.A.1,GH105,HTH_AraC,CE12,9.B.28,PL11,PL11,CE12,GH42	rhamnogalacturonan	pectin	2007	degradation
+PUL0250	1.B.18,8.A.3,GT4,GT4,NUDIX,PL12,GT4,9.B.18,9.B.18	capsule polysaccharide	capsule polysaccharide	2013	degradation
+PUL0251	CBM32,1.B.14,cNMP_binding	host glycan	host glycan	2014	degradation
+PUL0252	CBM32,1.B.14,GH29,HTH_AraC	mucin,O-glycan	multiple_substrates	2014	degradation
+PUL0253	Fer4,GT2,GT2,GT101,GT2,GT2,GT4,GT4,8.A.3,GH27	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0254	9.B.18,9.B.18,Fer4,GT4,GT4,1.B.18,8.A.3	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0255	Fer4,SIS,GT2,9.B.18,1.B.18,8.A.3	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0256	9.B.18,GT4,GT94,9.B.18,1.B.18	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0257	Pyr_redox,GT4,GT2,GT4,GT2	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0258	9.B.18,GT2,GT2,GT2,GT25,2.A.66	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0259	GerE,9.B.18,CbiA,GT4,PL15,GT4,AraC_binding	exopolysaccharide	exopolysaccharide	2008	biosynthesis
+PUL0260	GT4	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0261	8.A.3,GT4,GT4,GT4,GT2,GT14,GT14,GT32,GT8,GT2,GT2,2.A.66	capsule polysaccharide	capsule polysaccharide	2014	degradation
+PUL0262	1.B.14,GH10,GH10,GH5_21,CE1,CE6|GH95,GH8,HTH_AraC	xylan,arabinoxylan	multiple_substrates	2013	degradation
+PUL0263	GH10,1.B.14,HTH_AraC	xylan,arabinoxylan	multiple_substrates	2013,2019	degradation
+PUL0264	GH16,HTH_18,1.B.14,GntR,GntR,2.A.1,GH16	carrageenan	algal glycans	2019	degradation
+PUL0265	LacI|Peripla_BP_1|Peripla_BP_3,GH13_31	maltose,maltotriose	multiple_substrates	1995	degradation
+PUL0266	HTH_5,3.A.1,3.A.1,3.A.1,3.A.1,GH42,GH36,PfkB	lactose	mono/di/trisaccharide	2013	degradation
+PUL0267	Pyr_redox_2,CBM48|GH13_9,GT5,GT35,GH13_39,3.A.1	glycogen	alpha-glucan	2013	biosynthesis
+PUL0268	3.A.1,3.A.1,3.A.1,GH13_1,Peripla_BP_3|LacI	starch	alpha-glucan	2013	degradation
+PUL0269	3.A.1,PIG-L,GH3,3.A.1,3.A.1,SBP_bac_1,HTH_5,CBM5,GH18,CBM5|GH18	chitin	chitin	2014	degradation
+PUL0270	2.A.38,GT4,CE4,9.B.42,1.B.66,1.B.18	exopolysaccharide,lipopolysaccharide	multiple_substrates	2008	biosynthesis
+PUL0271	GH30_1,GH42,2.A.1,TetR_N	gentiobiose	mono/di/trisaccharide	2013	degradation
+PUL0272	2.A.2,GH2,LacI	beta-galactooligosaccharide	galactan	2013	degradation
+PUL0273	3.A.1,GH42,3.A.1,3.A.1,LacI	beta-galactooligosaccharide	galactan	2013	degradation
+PUL0274	GH43_12,LacI,SBP_bac_1,3.A.1,3.A.1,GH43_11,GH43_10,HTH_IclR	xylobiose,xylooligosaccharide	multiple_substrates	2013	degradation
+PUL0275	8.A.9,GH77,9.B.28,3.A.1,3.A.1,LacI,3.A.1,8.A.9	maltotriose	alpha-glucan	2013	degradation
+PUL0276	8.A.9,GH36,3.A.1,3.A.1,SBP_bac_1,GH36	isomaltose,panose,raffinose,stachyose,melibiose	multiple_substrates	2013	degradation
+PUL0277	4.A.1,GH32,LacI	fructooligosaccharide	fructan	2013	degradation
+PUL0278	GH32,3.A.1,3.A.1,3.A.1,LacI,Mga|HTH_Mga|PRD_Mga	fructooligosaccharide	fructan	2013	degradation
+PUL0279	GH32,3.A.1,3.A.1,3.A.1,LacI,Mga|HTH_Mga|PRD_Mga	fructooligosaccharide	fructan	2013	degradation
+PUL0280	8.A.3,8.A.3,9.B.18,GT4,GT4,GT2,GT2,GT2	capsule polysaccharide	capsule polysaccharide	2012	biosynthesis
+PUL0281	TPR_2,GT2,9.B.142,4.D.2,GT4,GT4	exopolysaccharide,lipopolysaccharide,capsule polysaccharide	multiple_substrates	2008	biosynthesis
+PUL0282	1.B.52,LacI,3.A.1,3.A.1,3.A.1,GH42	galactan	galactan	2013	degradation
+PUL0283	3.A.1,3.A.1,3.A.1,GH42,LacI,GH53|CBM61	galactooligosaccharide	galactan	2013	degradation
+PUL0284	2.A.2,GH2,LacI	galactooligosaccharide	galactan	2013	degradation
+PUL0285	LacI,3.A.1,3.A.1,GH42,3.A.1	galactooligosaccharide	galactan	2013	degradation
+PUL0286	Aminotran_1_2,GT2,GT4,GT2,1.B.18,8.A.3	O-antigen	O-antigen	2012	biosynthesis
+PUL0287	MarR,4.A.3,4.A.3,GH1,4.A.3	unknown polysaccharide	-	2012	degradation
+PUL0288	GT2	capsule polysaccharide,heparosan	multiple_substrates	2012	biosynthesis
+PUL0289	1.B.14,HTH_AraC,GH97,GH3,GH43_10,GH146,GH115,CE6|CE1,GH43_12,1.B.14	xylan	xylan	2018	degradation
+PUL0290	GT4,GT4,4.D.1	O-antigen	O-antigen	2018	degradation
+PUL0291	1.B.35,2.A.2,2.A.2,GH31,PfkB,HTH_DeoR	lactose	mono/di/trisaccharide	2018	degradation
+PUL0292	GH16,GH3,SIS,GntR,1.A.30,1.A.30,1.B.14	chitin	chitin	2008	degradation
+PUL0294	GH120,GH43_12,GH43_11,3.A.1,3.A.1,3.A.1,LacI	xylooligosaccharide	xylan	2018	degradation
+PUL0295	2.A.3,GH43_22|GH43_34,GH43_22|GH43_26,GH43_27,GH43_22,GH43_22,9.B.28	arabinan	galactan	2018	degradation
+PUL0296	2.A.3,HTH_5,GH43_22,9.B.28	arabinan	galactan	2018	degradation
+PUL0297	SBP_bac_1,3.A.1,3.A.1,GH42,LacI,GH53|CBM61	galactan	galactan	2018	degradation
+PUL0298	SBP_bac_1,3.A.1,3.A.1,GH42,LacI,2.A.2	galactan	galactan	2018	degradation
+PUL0299	LacI,3.A.1,3.A.1,SBP_bac_1,GH29,GH95	fucosyllactose	human milk oligosaccharide	2018	degradation
+PUL0300	3.A.1,3.A.1,SBP_bac_1,GH43_26,LacI,GH43_27,GH43_4,GH43_4,GH51,3.A.1	arabinoxylan	xylan	2018	degradation
+PUL0301	GT32,GT2,GT2	O-antigen	O-antigen	2018	biosynthesis
+PUL0302	GH51,GH146,NUDIX,2.A.21,GH43_4,1.B.14,1.B.14,HTH_AraC,GH43_4,GH51,GH43_29	arabinan	galactan	2018	degradation
+PUL0303	SBP_bac_1,3.A.1,3.A.1,3.A.1,CE9	chitin	chitin	2008	degradation
+PUL0304	GH2,GH53,8.A.46,1.B.14,HTH_AraC	galactan	galactan	2018	degradation
+PUL0305	GH105,CE8,CE12|CE8,HTH_AraC,1.B.14,PL1_2,PL1_2,9.B.116,LytTR,PL1_2,1.B.14,GH28,HTH_AraC	homogalacturonan	pectin	2018	degradation
+PUL0306	GH2,GH53,8.A.46,1.B.14,GH147,HTH_AraC	galactan	galactan	2018	degradation
+PUL0307	1.E.2,1.E.2,GH18,HTH_1,AA10	chitin	chitin	2018,1996	degradation
+PUL0308	GH16,1.B.14,8.A.46,GH3	beta-glucan	beta-glucan 	2017,2011,2020	degradation
+PUL0309	SBP_bac_3,3.A.1,3.A.1,GH43_4,GH127,GH51,GH27,GH51,3.A.1,3.A.1,3.A.1,GH146	arabinan	galactan	2017	degradation
+PUL0310	CBM4,1.B.14,1.B.14	laminarin	algal glycans	2017	degradation
+PUL0311	GT2,4.D.3,GH8,1.B.55	cellulose	cellulose	2019	degradation
+PUL0312	GH68,GH32	sucrose	mono/di/trisaccharide	2009	degradation
+PUL0313	PL6|PL6_1,PL7_5,PL6|PL6_1	alginate	algal glycans	2017,2020	degradation
+PUL0314	GT2	laminarin,alginate	multiple_substrates	2017	degradation
+PUL0315	1.B.14,GH16	agar,porphyran	multiple_substrates	2017	degradation
+PUL0316	GH2,GH117|GH117,HTH_AraC,GerE,1.B.14	agar,porphyran	multiple_substrates	2017	degradation
+PUL0317	GH16	agar,porphyran	multiple_substrates	2017	degradation
+PUL0318	TetR_N,GH16|CBM16	carrageenan	algal glycans	2017	degradation
+PUL0319	TPR_1,GH5_42	carrageenan	algal glycans	2017	degradation
+PUL0320	PL11|CBM3,CBM66|PL3_1,CBM66|PL9_1,HTH_AraC,GH10|CBM3|CBM3|GH48,GH5_8|CBM3|CBM3|GH44,GH74|GH74|GH74|GH74|CBM3|CBM3|GH48,GT39,GH9|CBM3|CBM3|CBM3|GH5_8,GH5_8|CBM3|CBM3|CBM3|GH5_1,GH9|CBM3|CBM3|CBM3|GH48	glucan	-	2018,2018	degradation
+PUL0321	GH1,1.B.3,4.A.3,4.A.3,4.A.3,GntR	beta-glucoside	mono/di/trisaccharide	2009	degradation
+PUL0322	PL11|CBM3,CBM66|PL3_1,CBM66|PL9_1,CBM66|PL9_1,CBM66|PL9_1,HTH_AraC,GH74|GH74|GH74|GH74|CBM3|CBM3|GH48,GT39,GH9|CBM3|CBM3|CBM3|GH5_8,CBM22|CBM22|GH10|CBM3|CBM3|GH5_1,GH10|CBM3|GH12|GH48,GH5_8|CBM3|CBM3|GH44,GH9|CBM3|CBM3|CBM3|GH48	glucan	-	2018	degradation
+PUL0323	GH53,GH42,3.A.1,3.A.1,3.A.1,LacI|Peripla_BP_3	galactan	galactan	2017	degradation
+PUL0324	1.B.18,8.A.3,CBS,GT4,GT4,9.B.18	capsule polysaccharide	capsule polysaccharide	2017	biosynthesis
+PUL0325	1.B.14,GH30_3,GH3	beta-glucan	beta-glucan 	2017	degradation
+PUL0326	GH73,Peptidase_M23,9.B.154	beta-glucan	beta-glucan 	2017	degradation
+PUL0327	8.A.9,CBM34|GH13_20,3.A.1,3.A.1,3.A.1	maltodextrin	alpha-glucan	2017,2020	degradation
+PUL0328	GH127,GH43_26,GH2,GH5_13,1.B.14	xylan	xylan	2017	degradation
+PUL0329	GH43_10,GH43_12,GH43_1,1.B.14,LacI,GH3,GH67,GH10,GH115,CE15,2.A.21	xylan	xylan	2017	degradation
+PUL0330	1.B.14,8.A.46,CE8,PL9_1,PfkB,2.A.56,2.A.56,2.A.56,LacI,GH28,GH105,GH43_10,GH28|PL9_1,CE12,CE10|CE8,CE12,PL10_1	pectin	pectin	2017	degradation
+PUL0331	4.A.3,4.A.3,GH1,4.A.3,LacI|Peripla_BP_3	cellobiose	mono/di/trisaccharide	2008	degradation
+PUL0332	GH5_2,GH5_7,CE7,HTH_AraC,GH2,GH94,8.A.5,GH97,8.A.46,1.B.14,GH127,GH127	carboxymethylcellulose,xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0333	PALP,3.A.1,GH9,1.B.14,GH31,HTH_AraC,GH9	carboxymethylcellulose,xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0334	GH9,1.B.14,GH31,HTH_AraC,GH9,GH9,ATPase_2,CE4,HATPase_c,GerE	carboxymethylcellulose,xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0335	HTH_8,Glyoxalase,3.B.1,3.B.1,3.B.1,TPR_1,GH13,Pribosyltran,HTH_AraC,Fer4,GH97,1.A.43,GH3,GH158,GH16	xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0336	1.A.43,GH3,GH158,GH16,1.B.14,GerE,4.D.2,2.A.107,2.A.7,TPR_2,HTH_AraC,2.A.1	xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0337	Aminotran_1_2,GerE,2.A.35,2.A.1,HTH_AraC,TPR_2,2.A.7,2.A.107,4.D.2,GerE,1.B.14,GH16,GH158,GH3	xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0338	2.A.1,HTH_AraC,TPR_2,2.A.7,2.A.107,4.D.2,GerE,1.B.14,GH16,GH158,GH3,1.A.43,GH97,Fer4,HTH_AraC,Pribosyltran	xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0339	GH97,1.A.43,GH3,GH16,1.B.14,GH20,Pyr_redox_2,3.A.12	xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0340	HTH_psq,GH5_2,3.A.3,HMA,Aminotran_1_2,HTH_3,Trans_reg_C,HisKA|HATPase_c,MerR,Sigma70_r4_2,HTH_3,HTH_3,HTH_3	carboxymethylcellulose,xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0341	GH32,GH91,3.A.1,3.A.1,SBP_bac_1,LacI,3.A.1,TrmB,2.A.115,HTH_psq,GH5_2,3.A.3,HMA,3.A.7	carboxymethylcellulose,xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0342	GH10|CE1,GH95,GH3,SBP_bac_1,HTH_AraC	xylan	xylan	2009	degradation
+PUL0343	3.A.7,HMA,3.A.3,GH5_2,HTH_psq,2.A.115,TrmB,3.A.1,LacI,SBP_bac_1,3.A.1,3.A.1	carboxymethylcellulose,xylan,beta-glucan,lichenan	multiple_substrates	2017	degradation
+PUL0344	GH18|GH18,GH20,PIG-L,8.A.46,1.B.14,GH18,8.A.46,1.B.14,LytTR,2.A.1	chitin	chitin	2016,2020	degradation
+PUL0345	HTH_AraC,1.B.14,GH10,GH35,2.A.2,GH10|GH43_12,GH43_1,GH67,GH8,CE6|GH95,CE1,GH5_21,GH10,1.B.14,GH115	xylan	xylan	2016	degradation
+PUL0346	GH43_29,HTH_AraC,1.B.14,GH43_12,GH43_1,GH10,2.A.2,GH16	xylooligosaccharide	xylan	2016	degradation
+PUL0347	HTH_AraC,2.A.1,MarR,Glyoxalase,2.A.1,GH13_11	sorbitol	-	2014	degradation 
+PUL0348	GH33,GH20,GH2,GH20|CBM32,GH20,GH92,GH2,1.B.14,GH2	sialoglycoconjugate	mono/di/trisaccharide	2012	degradation 
+PUL0349	GH4,GntR,4.A.1	sucrose	mono/di/trisaccharide	2012	degradation 
+PUL0350	9.B.146,Pyr_redox,GT4,GT2,GT4,GT2	capsule polysaccharide	capsule polysaccharide	2006	biosynthesis
+PUL0351	2.A.1,GH32,LacI	sucrose	mono/di/trisaccharide	1992	degradation
+PUL0352	GerE,FecR,1.B.14,GH20	arabinan,xylan,levan,pectin,rhamnogalacturonan	multiple_substrates	2006	degradation
+PUL0353	1.B.14,8.A.46,GH0,GH92,GH92,FecR,GerE	arabinan,xylan,levan,pectin,rhamnogalacturonan	multiple_substrates	2006,2020	degradation
+PUL0354	GH93,1.B.14,GH43_31,HTH_AraC,GH43_31	lactose,host glycan	multiple_substrates	2006	degradation
+PUL0355	GH30_4,1.B.14,HTH_AraC,GH18	lactose,host glycan	multiple_substrates	2006	degradation
+PUL0356	Sigma70_r4_2|Sigma70_r2,FecR,1.B.14,8.A.46,GH18	lactose,host glycan	multiple_substrates	2006	degradation
+PUL0357	CBM32,1.B.14	arabinan,xylan,levan,pectin,rhamnogalacturonan	multiple_substrates	2006	degradation
+PUL0358	GH35,GH43_19,GH43_9|GH43_19,GH51	lactose,host glycan	multiple_substrates	2006	degradation
+PUL0359	GH43_10,GH97,GH29,HTH_AraC	lactose,host glycan	multiple_substrates	2006	degradation
+PUL0360	GH2,GH53,8.A.46,1.B.14	lactose,host glycan	multiple_substrates	2006	degradation
+PUL0361	8.A.9,3.A.1,3.A.1,3.A.1,GH13_20,GH4	starch,maltodextrin	multiple_substrates	2000	degradation
+PUL0362	LacI,2.A.2,GH13_4	sucrose	mono/di/trisaccharide	2007	degradation
+PUL0363	1.B.14,CE8,PL10_1	pectin	pectin	2007	degradation
+PUL0364	GH10,GH2,GH10,2.A.1,2.A.2,GH43_1	xylan	xylan	2007	degradation
+PUL0365	LacI,GH13_2,2.A.2,GH97,1.B.14,8.A.9	maltodextrin	alpha-glucan	2007	degradation
+PUL0366	HTH_DeoR,4.A.6,4.A.6,4.A.6,4.A.6,CE9,SIS,4.A.6,4.A.6,4.A.6	N-acetyl-D-galactosamine,d-galactosamine	multiple_substrates	2000	degradation
+PUL0367	GH42,3.A.1,3.A.1	galactooligosaccharide	galactan	2008	degradation
+PUL0368	2.A.2,GH2,GH95,GH29,9.B.28,3.A.1,3.A.1,SBP_bac_1,3.A.1,3.A.1,SBP_bac_1,GH33,SBP_bac_1,SBP_bac_1,SBP_bac_1,SBP_bac_1,GH20,SBP_bac_1,3.A.1,3.A.1,3.A.1	human milk oligosaccharide	human milk oligosaccharide	2008	degradation
+PUL0369	4.A.6,4.A.6,4.A.6,GH88,4.A.6,PfkB,Nitroreductase	unsaturated hyaluronate disaccharide,chondroitin disaccharide	multiple_substrates	2009	degradation
+PUL0370	GH1,4.A.1	beta-glucoside	mono/di/trisaccharide	2009	degradation
+PUL0371	GH13_20,8.A.9,3.A.1,3.A.1,3.A.1	cyclomaltodextrin	alpha-glucan	2001	degradation
+PUL0372	GH1,4.A.1	beta-glucoside	mono/di/trisaccharide	2009	degradation
+PUL0373	LacI,GH32,4.A.1,1.B.3,PfkB	sucrose	mono/di/trisaccharide	2009	degradation
+PUL0374	LacI,GH36,2.A.1	melibiose	mono/di/trisaccharide	2009	degradation
+PUL0375	HTH_8,HATPase_c|Response_reg|HisKA,GH97,GH67,GH76,1.B.14,HTH_AraC,GH92,GH76,GH125	alpha-mannan	alpha-mannan	2008	degradation
+PUL0376	1.B.14,1.B.14,GH16,GH18,HTH_AraC	mucin,O-glycan	multiple_substrates	2008	degradation
+PUL0377	PL8_2,PL29,8.A.46,1.B.14,HTH_AraC,2.A.6,2.A.6,2.A.6,GH2,1.B.14,GH88,PL8_2	glycosaminoglycan	glycosaminoglycan	2008	degradation
+PUL0378	GH92,GH38|CBM32,GT32,GT32,GH130,GH125,GH76,GH92,HTH_AraC,1.B.14,GH76	alpha-mannan	alpha-mannan	2008	degradation
+PUL0379	1.B.14,GH92,GH99	alpha-mannan	alpha-mannan	2008	degradation
+PUL0380	1.B.14,8.A.46,GH0,GH92,GH92,FecR,GerE,GH92	mucin,O-glycan	multiple_substrates	2008	degradation
+PUL0381	CE4,4.A.3,4.A.3,4.A.3,GH4	chitin	chitin	2004	degradation
+PUL0382	GH2,2.A.115,GH109,1.B.14,FecR,Sigma70_r4_2	mucin,O-glycan	multiple_substrates	2008	degradation
+PUL0383	GerE,FecR,1.B.14,GH89	mucin,O-glycan	multiple_substrates	2008	degradation
+PUL0384	PL15_2,2.A.1,PL12_2,GH88,8.A.46,1.B.14,PL12_2,HTH_AraC	glycosaminoglycan	glycosaminoglycan	2008	degradation
+PUL0385	GH48,GH8,GH9|CBM3,CBM4|GH9,GH9,GH9|CBM3,GH5_17,GH9,PL11,GH5_1	cellulose	cellulose	2010	degradation
+PUL0386	GH43_16|CBM6,GH10|CBM6,GH43_29|CBM6,CE1|CBM6,GH43_10|CBM6,GH62|CBM6,GH43_29|CBM6,GH146|CBM22,GH27|CBM6,GH59|CBM6,GH2|CBM6	hemicellulose	hemicellulose	2010	degradation
+PUL0387	1.B.14,CE9,SIS,LacI,2.A.1,GntR	N-acetylglucosamine	glycosaminoglycan	2010	degradation
+PUL0388	GT4,GT4,Pyr_redox,GT2	O-antigen	O-antigen	2011	biosynthesis
+PUL0389	GT4,GT4,GT2	O-antigen	O-antigen	2011	biosynthesis
+PUL0390	GH67,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,CBM22|CBM22|GH10|CBM9|CBM9,HTH_11,PfkB,GH10,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,GH3,CE7,3.A.1	acetylated glucuronoxylan	xylan	2010	degradation
+PUL0391	PL11|CBM3,CBM66|PL3_1,CBM66|PL9_1,HTH_18,GH10|CBM3|CBM3|GH48,GH5_8|CBM3|CBM3|GH44,GH74|GH74|GH74|GH74|CBM3|CBM3|GH48,GT39,GH9|CBM3|CBM3|CBM3|GH5_8,GH5_8|CBM3|CBM3|CBM3|GH5_1,GH9|CBM3|CBM3|CBM3|GH48	cellulose,xylan,xyloglucan,pectin,mannan	multiple_substrates	2011	degradation
+PUL0392	8.A.46,1.B.14,Sigma70_r2|Sigma70_r4_2,GH67,2.A.2,GH13_14	xylan	xylan	2016	degradation
+PUL0393	CBM6|GH86|GH86,1.B.14,GH16|CBM6	galactan	galactan	2011	degradation
+PUL0394	LacI,3.A.1,3.A.1,GH32,PfkB	fructan,inulin	multiple_substrates	2011	degradation
+PUL0395	3.A.1,8.A.59,HTH_18|Response_reg,3.A.1,3.A.1,3.A.1,GntR|Peripla_BP_3,GH43_5,SBP_bac_1,3.A.1,3.A.1,GH43_4,GH51,GH51,GH127	arabinose,arabinan	multiple_substrates	2011	degradation
+PUL0396	GntR,4.A.1,4.A.1,1.B.1,CE9,SIS	N-acetylglucosamine	glycosaminoglycan	2011	degradation
+PUL0397	1.B.14,8.A.46	N-acetylglucosamine	glycosaminoglycan	2011	degradation 
+PUL0398	1.B.14,GH2	N-acetylglucosamine	glycosaminoglycan	2011	degradation 
+PUL0399	GH42,2.A.2,LacI,GH2	beta-galactooligosaccharide	galactan	2011	degradation 
+PUL0400	PL6|PL6_1,PL17_2|PL17,AraC_binding,2.A.1,PfkB,GntR,CBM32|PL7_5,1.B.14,PL6_3,PL7_5	alginate	algal glycans	2015,2019	degradation
+PUL0401	GH16,1.B.14,9.B.34,2.A.35,GH3,2.A.1,8.A.49,LacI,2.A.1	laminarin	algal glycans	2019	degradation
+PUL0402	GH43_11,2.A.2,HTH_AraC	xylan,xylose	multiple_substrates	2001	degradation
+PUL0403	1.B.14,GH1,2.A.2,LacI|Peripla_BP_3	laminarin	algal glycans	2019	degradation
+PUL0404	2.A.56,2.A.56,2.A.56,LacI,PfkB,CE12,1.B.14,GH105,GH28,CE8	pectin	pectin	2019	degradation
+PUL0405	TrmB,PL1_2,PL1_5|PL1_5	pectin	pectin	2019	degradation
+PUL0406	3.A.1,LacI,GH16,GH3,GH18,1.E.19,HTH_5,3.A.3,9.B.105	beta-glucan	beta-glucan 	2019	degradation
+PUL0407	4.A.3,GH1,4.A.3	lactose	mono/di/trisaccharide	1997	degradation
+PUL0408	GH26,GH130,2.A.2	beta-mannan	beta-mannan	2014	degradation
+PUL0409	SIS|CBS,8.A.4,1.B.18,9.A.41,9.A.41,GT38,3.A.1,3.A.1	polysialic acid	-	2011	 biosynthesis 
+PUL0410	2.A.1,GntR	sialic acid	mono/di/trisaccharide	2011	degradation
+PUL0411	GH10,GH43_1	xylan	xylan	1995	degradation
+PUL0412	GH28,2.A.1	polygalacturonic acid	pectin	2003	degradation
+PUL0413	3.A.1,8.A.49,3.A.1,3.A.1,AAA,8.A.59,3.A.12,GH44,1.C.39,2.A.21	cellobiose	mono/di/trisaccharide	2019	degradation
+PUL0414	GH10,3.A.12,ATPase_2,SBP_bac_1,3.A.1,3.A.1,8.A.49,GH10,Fer4	xylan	xylan	2019	degradation
+PUL0415	8.A.46,1.B.14,GH20,GH20	xylan,glucomannan,plant polysaccharide	multiple_substrates	2011	degradation
+PUL0416	2.A.1,1.B.14,CE6|GH151	plant polysaccharide	plant polysaccharide	2011	degradation
+PUL0417	CE6,1.B.14,2.A.1,2.A.1	plant polysaccharide	plant polysaccharide	2011	degradation
+PUL0418	1.B.14,CE1,CE1	plant polysaccharide	plant polysaccharide	2011	degradation
+PUL0419	GH5_2,1.B.14,GH5_5,GH2,GH5_5,GH140,GH130,2.A.2,CBM67|GH78	plant polysaccharide	plant polysaccharide	2011	degradation
+PUL0420	GH144,GH3,8.A.46,1.B.14	plant polysaccharide	plant polysaccharide	2011	degradation
+PUL0421	GH13_10,8.A.46,1.B.14,GH97,GH13	starch	alpha-glucan	2011	degradation
+PUL0422	1.B.14,8.A.46,GH18	host glycan	host glycan	2011	degradation
+PUL0423	GH94,8.A.49	cellobiose	mono/di/trisaccharide	2000	degradation
+PUL0424	8.A.46,1.B.14,1.B.14,8.A.46,GH18,GH163,GH130,GH92	host glycan	host glycan	2011	degradation
+PUL0425	PfkB,2.A.1,GH32,GH91,GH91,1.B.14,GH32	fructan,inulin	multiple_substrates	2011	degradation
+PUL0426	8.A.46,1.B.14,GH0,GH92,GH92,FecR	mucin,O-glycan	multiple_substrates	2011	degradation
+PUL0427	GH53,8.A.46,1.B.14,GH147	plant polysaccharide	plant polysaccharide	2011	degradation
+PUL0428	TetR_N,4.D.1,CE4,9.B.97	exopolysaccharide	exopolysaccharide	1996	biosynthesis
+PUL0429	1.B.18,ComK,9.B.18,CbiA,GT2,GT2,4.C.1,GT4,GT2	O-antigen,unknown polysaccharide	multiple_substrates	2011	biosynthesis
+PUL0430	GT4,GT4,8.A.3,GT94	O-antigen,exopolysaccharide	multiple_substrates	2012	biosynthesis
+PUL0431	NUDIX,GT26	O-antigen	O-antigen	2016	biosynthesis
+PUL0432	GT4,2.A.121,GT2	O-antigen	O-antigen	2017	biosynthesis
+PUL0433	GT2,9.B.97	O-antigen	O-antigen	2017	biosynthesis
+PUL0434	CBM4|GH9,GH9,GH5_17,CBM4|GH9,CBM4,2.A.69	mannooligosaccharide	-	2000	degradation
+PUL0435	GH43_34,GerE,FecR,1.B.14,8.A.46,GH30_1,GH30_3,GH16,1.B.14,FecR,Sigma70_r2|Sigma70_r4_2	glucose	mono/di/trisaccharide	2017	degradation
+PUL0436	GH65,GH13,8.A.46,1.B.14,LacI,CBM32|CBM32	glucomannan	beta-mannan	2017	degradation
+PUL0437	GH51,1.B.14,HTH_AraC	glucomannan	beta-mannan	2017	degradation
+PUL0438	1.B.14,8.A.46,GH89,DUF24,4.D.3,GH158	glucomannan,glucose	multiple_substrates	2017	degradation
+PUL0439	GH33,8.A.46,1.B.14,FecR	glucomannan,glucose	multiple_substrates	2017	degradation
+PUL0440	GH2,1.B.14,HTH_AraC,GH76	glucomannan,galactomannan	multiple_substrates	2017	degradation
+PUL0441	1.B.14,FecR,GerE,GH130,GH43_26|CBM13	glucomannan,galactomannan	multiple_substrates	2017	degradation
+PUL0442	GH18|GH18,GH18|CBM6,GH16|CBM6,GerE,FecR,1.B.14	glucomannan,galactomannan,glucose	multiple_substrates	2017	degradation
+PUL0443	GH16,GerE,Sigma70_r4_2|Sigma70_r2,FecR,1.B.14,8.A.46,Y_Y_Y,CBM6|CBM6	glucomannan,galactomannan,glucose	multiple_substrates	2017	degradation
+PUL0444	GH31,1.B.14,GH19	glucomannan,galactomannan,glucose	multiple_substrates	2017	degradation
+PUL0445	PL5|PL7,LacI,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,PL15_1	alginate	algal glycans	2000	degradation
+PUL0446	Aminotran_1_2,2.A.66,GT4	O-antigen	O-antigen	2017	biosynthesis
+PUL0447	GT4,9.B.18,GT4,2.A.66	O-antigen	O-antigen	2017	biosynthesis
+PUL0448	NUDIX,GT4	O-antigen	O-antigen	2017	biosynthesis
+PUL0449	GT4,9.B.18,GT2,GT4	O-antigen	O-antigen	2017	biosynthesis
+PUL0450	GT52,GT2,Pyr_redox,GT2	O-antigen	O-antigen	2017	biosynthesis
+PUL0451	8.A.3,8.A.3,9.B.18,GT4,4.D.1	O-antigen	O-antigen	2017	biosynthesis
+PUL0452	8.A.3,8.A.3,9.B.18,GT4,GT2	O-antigen	O-antigen	2017	biosynthesis
+PUL0453	8.A.3,8.A.3,9.B.18,GT4,4.D.1	O-antigen	O-antigen	2017	biosynthesis
+PUL0454	GH13_13|CBM41|CBM41,3.A.1,GT5,NUDIX,GT5,GH77,PfkB,GH13_13|CBM41|CBM41,GH13_2|CBM20	acarbose	-	2013	biosynthesis
+PUL0455	2.A.1,GH13_18,LacI	sucrose	mono/di/trisaccharide	2003	degradation
+PUL0456	2.A.1,HTH_AraC,1.B.14,1.B.14,GH43_10,HTH_AraC,GH43_1,GH10,2.A.2,GH67	xylan	xylan	2010	degradation
+PUL0457	GH43_11,2.A.2,2.A.1	xylooligosaccharide	xylan	2016	degradation
+PUL0458	GH16,HTH_1,2.A.1,GntR,GH16|CBM16|CBM16,1.B.52,TrmB,GH16,2.A.21,GH16,GntR	carrageenan	algal glycans	2020	degradation
+PUL0459	GH2,2.A.21,3.D.1,GH96,GH96,2.A.1,GH50,GH50,GH29,SBP_bac_1,TrmB,1.B.14,GntR,GH50,1.B.14,GH86,3.A.1,3.A.1,3.A.1,3.A.1,PfkB,GH117|GH117	agar	algal glycans	2020	degradation
+PUL0460	GH2,GH29,PfkB,GH63,2.A.21,Sigma70_r4,HTH_18,HTH_AraC,1.B.14,GH86|GH86|CBM6,GntR,GH50,TetR_N,Glyoxalase,GH86,GntR,GH50,1.B.14,2.A.1,GH117|GH117,PfkB,HTH_1,1.B.6,GH50,2.A.56,2.A.56,GH16,HTH_3,GH50,Pyr_redox_2,CE1,2.A.21,HTH_AraC,GH16,GH127,GH16,GH82,GH16,GH16,1.B.14,MarR,HTH_11,Crp,GH16	carrageenan,agar	multiple_substrates	2018	degradation
+PUL0461	9.B.18,GT4,GT4,GT4,1.B.6	O-antigen	O-antigen	2019	biosynthesis
+PUL0462	GT2,GT4,GT2	O-antigen	O-antigen	2014	biosynthesis
+PUL0463	Fe_dep_repress,2.A.1,GH89,1.B.14,CE2	host glycan	host glycan	2008	degradation
+PUL0464	1.B.14,2.A.1,GH33,GH20,GH2,GH20,GH20,GH2	host glycan	host glycan	2008	degradation
+PUL0465	GerE,FecR,1.B.14,8.A.46,GH18	mucin	glycoprotein	2008	degradation
+PUL0466	GH51,3.A.1,3.A.1,3.A.1	arabinan	galactan	2004	degradation
+PUL0467	1.A.23,GH29|CBM32,GH2,GH20,1.B.14,GH18,HTH_AraC	host glycan	host glycan	2008	degradation
+PUL0468	TPR_2|TPR_1,Peptidase_M23,HTH_AraC,GH43_26,1.B.14,1.B.14,ATPase_2,1.B.14,GH76,1.B.14	host glycan	host glycan	2008	degradation
+PUL0469	8.A.9,8.A.46,1.B.14,GH97,8.A.9	starch	alpha-glucan	2008	degradation
+PUL0470	Sigma70_r2|Sigma70_r4_2,FecR,1.B.14,1.B.14,8.A.46,GH18	mucin	glycoprotein	2008	degradation
+PUL0471	HTH_AraC,1.B.14,GH92,GH92,GH92	mucin	glycoprotein	2008	degradation
+PUL0472	GerE,GH38,GH92,GH2,CBM67|GH78,CE1,1.B.14,1.B.14,GH92,GH92,GH130,GH43_8	mucin	glycoprotein	2008	degradation
+PUL0473	GH13|CBM26,GH97,GH13,8.A.46,1.B.14,FecR,GerE	alpha-glucan,starch	multiple_substrates	2009	degradation
+PUL0474	GerE,1.B.14,8.A.46,GH30_1,GH30_1,GH3,GH30_3,GH3	beta-glucan,xylan	multiple_substrates	2009	degradation
+PUL0475	LacI,3.A.1,3.A.1,3.A.1,8.A.49,CBM2|GH18	cellobiose,cellotriose	multiple_substrates	1999	degradation
+PUL0476	HTH_AraC|HTH_11,1.B.14,GH5_13,GH43_18,GH2,GH43_26,GH43_31,GH29|CBM32|CBM32,PIG-L	hemicellulose,pectin	multiple_substrates	2009	degradation
+PUL0477	GerE,1.B.14,8.A.46,GH16,GH16	beta-glucan	beta-glucan 	2009	degradation
+PUL0478	LacI,1.B.14,8.A.46,GH2,GH92,GH92,GH125	alpha-glucan,starch	multiple_substrates	2009	degradation
+PUL0479	GH43_19|GH43_34,GH27,GH2,GH95,GH51,GH28,GH28,2.A.21,GH2,HTH_AraC,GH92,GH92,1.B.14,GH89	pectin	pectin	2009	degradation
+PUL0480	GH3,HTH_AraC,1.B.14,GH10,GH16,GH8,2.A.2	hemicellulose	hemicellulose	2009	degradation
+PUL0481	8.A.46,1.B.14,HTH_AraC,GH97,GH3,GH43_10,GH146,GH115,GH43_12,1.B.14,GH3	hemicellulose	hemicellulose	2009,2020	degradation
+PUL0482	CBM67|GH78,GH142,GH95,CBM67|GH78,GH143,GH43_18,GH28,GH140,PL1_2,PL1_2,1.B.14,CE8,GH127,PL1_2,GH139,GH106,GH2,GH137,GH78,HTH_AraC	pectin	pectin	2009	degradation
+PUL0483	GH2,CE12|CE12,GH28,GH117,1.B.14,GH106,GH105	pectin	pectin	2009	degradation
+PUL0484	CE12,GH28,PL10_1|CE8,GH43_10,GH105,GH105,GH105,8.A.46,1.B.14,GH28,LacI	pectin	pectin	2009	degradation
+PUL0485	GH65,GH97,GH31,GH66,8.A.46,1.B.14	dextran	alpha-glucan	2009	degradation
+PUL0486	9.B.67,GH13_18,3.A.1,3.A.1,3.A.1,GH36,HTH_AraC,HTH_11	raffinose	mono/di/trisaccharide	1999	degradation
+PUL0487	GH18|GH18,GH20,PIG-L,8.A.46,1.B.14,GH18,8.A.46,1.B.14,LytTR	chitin	chitin	2009	degradation
+PUL0488	GH5_2,GH27,8.A.46,1.B.14,HTH_AraC,GH26,2.A.2,GH130,GH26,GH5_7,GH97	beta-mannan	beta-mannan	2009	degradation
+PUL0489	SIS,GT4,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0490	Aminotran_1_2,GT2,GT11,9.A.29,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0491	GT46,9.B.18,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0492	2.A.66,GT2,GT0,Aminotran_1_2,9.B.18,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0493	GT2,GT4,GT4,2.A.66,GT10,GT2,Aminotran_1_2	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0494	2.A.66,Aminotran_1_2,9.B.97,GT4,GT4,GT4,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0495	GT2,GT2,GT94,GT2,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0496	GT2,GT2,GT2,GT2,Aminotran_1_2,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0497	GH18,AA10|CBM5,GH18|CBM5	chitin	chitin	2002	degradation
+PUL0498	GT2,9.B.97,GT4,GT11,GT4,GT4,GT4,GT26,9.A.25	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0499	GT2,GT2,GT101,GT4,2.A.66,GT2,GT2,GT2	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0500	GT4,GT94,GT4,GT4,GT2	O-glycan	O-glycan	2010	biosynthesis
+PUL0501	2.A.66,GT2,GT4,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0502	GT11,GT2,GT2,GT4,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0503	GT11,GT4,GT2,GT4,CE4,GT4,GT2,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0504	9.B.146,GT2,GT2,9.B.183,GT2,GT11,GT10	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0505	9.B.146,GT4,GT4,GT4,GT2,GT2	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0506	2.A.66,GT8,GT2,GT2,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0507	Aminotran_1_2,2.A.66,PL12,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0508	LacI,3.A.1,3.A.1,3.A.1,GH3	xylobiose,xylotriose	multiple_substrates	2004	degradation
+PUL0509	GT2,GT4,GT2,GT2,GT2,GT10,Nitroreductase,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0510	GT2,GT2,GT2,GT2,GT4,Fer4,GT4,GT26,9.A.25	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0511	GT2,GT2,GT4,2.A.66,4.D.1,GT2,GT2	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0512	GT4,GT94,GT4,GT4,GT2	O-glycan	O-glycan	2010	biosynthesis
+PUL0513	GT2,GT2,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0514	GT11,GT2,GT2,GT4,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0515	GT46,9.B.18,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0516	9.B.18,GT4,GT4,9.B.67,GT2,GT4,2.A.66	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0517	9.B.18,GT2,GT2,GT11,GT2,2.A.66	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0518	Fer4,GT2,GT2,GT4,GT4,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0519	GT35,GH77,3.A.1,3.A.1,3.A.1,LacI	maltose	mono/di/trisaccharide	1993	degradation
+PUL0520	2.A.2,GH43_11	xylobiose,xylodextrin	multiple_substrates	2003	degradation
+PUL0521	2.A.66,Aminotran_1_2,GT2,GT4,9.B.18	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0522	GT2,GT4,GT2,GT32,GT2,GT2,Aminotran_1_2,9.B.146	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0523	GT4,GT4,GT4,GT26,9.A.25	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0524	GT2,GT2,GT4,GT101,2.A.66,GT4,GT2,GT2	capsule polysaccharide	capsule polysaccharide	2010	biosynthesis
+PUL0525	GT94,GT4,GT4,GT2	O-glycan	O-glycan	2010	biosynthesis
+PUL0526	1.B.14,GH30_3,GH3	beta-glucan	beta-glucan 	2011	degradation
+PUL0527	HATPase_c,9.B.174,GH3,GH2,GH31,HTH_AraC,GH9,1.B.14,GH5_4,GH43_12,GH43_12,GH3	xyloglucan	xyloglucan	2011	degradation
+PUL0528	GH3,HTH_AraC,GH16,1.B.14,8.A.46,GH3	beta-glucan	beta-glucan 	2011	degradation
+PUL0529	GH105,CE8,CE12|CE8,HTH_AraC,PL1_2,PL1_2,PL1_2,CE8,1.B.14,9.B.116,LytTR,PL1_2,PL1_2,1.B.14,8.A.46,CE8,GH28,GH3,GH43_10,HTH_AraC	homogalacturonan	pectin	2011	degradation
+PUL0530	Sigma70_r2|Sigma70_r4_2,PL1_2,HTH_AraC,GH2,GH139,GH106,3.A.3,HisKA|HATPase_c,Trans_reg_C,GH2,GH2,HisKA|HATPase_c,HTH_AraC,GH137|GH2|CBM57,GH138,2.A.21,GH78,GH141,GH127,Nitroreductase,GH95,GH105,GH140,CBM67|GH78|GH33,GH28,CBM67|GH78,GH143|GH142,GH43_18,PL1_2,1.B.14,1.B.14	rhamnogalacturonan	pectin	2011	degradation
+PUL0531	4.A.3,4.A.3,GH1,HTH_18|AraC_binding	chitobiose	mono/di/trisaccharide	2003	degradation
+PUL0532	GH51,GH43_4,HTH_AraC,1.B.14,GH43_4,2.A.21,NUDIX,GH146,GH51	arabinan,pectin	multiple_substrates	2013	degradation
+PUL0533	HTH_AraC,GH115,1.B.14,1.B.14,GH10,GH30_8	xylan,arabinoxylan	multiple_substrates	2013	degradation
+PUL0534	GH133,GH13_10,8.A.46,1.B.14,GH2,GH53,GH147	pectin	pectin	2013	degradation
+PUL0535	GH43_24|GH16,GH16,1.B.14,1.B.14,HTH_AraC	arabinogalactan	galactan	2013	degradation
+PUL0536	HTH_AraC,GH2,1.B.14	N-acetyl-D-glucosamine,glucosamine	multiple_substrates	2013	degradation
+PUL0537	GH3,GH3,1.B.14,GH157,HTH_AraC	beta-glucan	beta-glucan 	2013	degradation
+PUL0538	2.A.2,GH130,GH26,GH26|GH26,1.B.14,GH5_2,GH5_7,CE7,HTH_AraC,GH3	galactomannan,glucomannan,cellobiose,xyloglucan	multiple_substrates	2013	degradation
+PUL0539	PL1_2,1.B.14,GH28,HTH_AraC,GH105,GH28,PL11,GH106,GH105	fucose,galacturonic acid, rhamnose	multiple_substrates	2013	degradation
+PUL0540	GH97,GH13,GH13,1.B.14	pullulan	alpha-glucan	2013	degradation
+PUL0541	HTH_AraC,1.B.14,8.A.46,PL8_2	N-acetyl-D-galactosamine,chondrotin sulfate	multiple_substrates	2013	degradation
+PUL0542	8.A.59,HTH_AraC,SBP_bac_1,3.A.1,3.A.1,CE4,GH52,GH10,3.A.1,3.A.1,GH67,GH39,PfkB,GntR,9.B.28,AAA,GH43_11	xylan	xylan	1999	degradation
+PUL0543	GH30_3,1.B.14,GH2|CBM57,GH88	cellobiose,beta-glucan,glucosamine	multiple_substrates	2013	degradation
+PUL0544	PfkB,1.B.14,GH2	ribose	mono/di/trisaccharide	2013	degradation
+PUL0545	HTH_AraC,GH43_2|CBM6,GH3,GH43_17,GH9,1.B.14,GH43_7|GH43_7,CE1	arabinan	galactan	2013	degradation
+PUL0546	HTH_AraC,GH2,1.B.14,GH30_4,GH51	arabinogalactan,cellobiose	multiple_substrates	2013	degradation
+PUL0547	HTH_AraC,2.A.21,GH130,1.B.14,GH26,GH2,GH3	mannose	mono/di/trisaccharide	2013	degradation
+PUL0548	GH28,GH92,GH92,1.B.14,FecR,GerE	arabinose	mono/di/trisaccharide	2013	degradation
+PUL0549	HTH_AraC,GH140,1.B.14	polygalacturonic acid	pectin	2013	degradation
+PUL0550	PL1_2,CE8,1.B.14,GH3,HTH_AraC	N-acetyl-D-galactosamine	glycosaminoglycan	2013	degradation
+PUL0551	1.B.14,GH16,GH3	cellobiose,beta-glucan,glucomannan,laminarin	multiple_substrates	2013	degradation
+PUL0552	1.B.14,PL1_2,GH43_18,GH143|GH142,CBM67|GH78	arabinan	galactan	2013	degradation
+PUL0553	GH43_10,GH3,GH43_12,GH31,GH97,GH43_29|CBM6,GH43_12,1.B.14,GH10,GH5_21,CE6|CE1,GH43_29|CBM6,HTH_18|HisKA|HATPase_c|Y_Y_Y|Reg_prop|Response_reg,GH95,GH115	xylan	xylan	2016	degradation
+PUL0554	1.B.14,8.A.46,GH66,GH31,GH97	dextran	alpha-glucan	2013	degradation
+PUL0555	GH154,GH2,GH20,GH88,PL33_1,1.B.14,HTH_AraC	N-glycan	N-glycan	2014	degradation
+PUL0556	GerE,FecR,1.B.14,8.A.46,GH18	N-glycan	N-glycan	2014	degradation
+PUL0557	GH97,GH67,GH76,1.B.14,HTH_AraC,GH92,GH76,GH125	alpha-mannan	alpha-mannan	2015	degradation
+PUL0558	HTH_AraC,GH2,GH139,GH106,3.A.3,HisKA|HATPase_c,Trans_reg_C,GH2,GH2,HisKA|HATPase_c,HTH_AraC,GH137|GH2|CBM57,GH138,2.A.21,GH78,GH141,GH127,Nitroreductase,GH95,GH105,GH140,CBM67|GH78|GH33,GH28,CBM67|GH78,GH143|GH142,GH43_18,PL1_2,1.B.14,1.B.14	rhamnogalacturonan	pectin	2017	degradation
+PUL0559	GH43_34,GH43_10,GH97,GH29,HTH_AraC,1.B.14	rhamnogalacturonan	pectin	2017	degradation
+PUL0560	PL27,GH43_24,GH43_24,HTH_AraC,1.B.14,1.A.30,GH35	arabinogalactan	galactan	2008,2011	degradation
+PUL0561	2.A.2,GH36,GH2	alpha-galactoside	mono/di/trisaccharide	2002	degradation
+PUL0562	GH43_34,GH43_10,GH97,GH29,HTH_AraC,1.B.14	host glycan,rhamnogalacturonan	multiple_substrates	2008,2011	degradation
+PUL0563	GH127,GH43_34,GH154,HTH_AraC,1.B.14,GH16|GH43_24,GH43_24,GH145,GH105	arabinogalactan	galactan	2008,2011	degradation
+PUL0564	GH106,GH28,GH28,CE12,GH2,GH43_18|GH42,GH28,CE4,GH28,GH2,CBM35,GH35,1.B.14,8.A.46,1.B.14,PL9,PL26,CE12|CE12,GH105,PL11_1,GH105,HTH_AraC,CE4,CE6,GH2,HTH_AraC,PL9_1	rhamnogalacturonan	pectin	2008,2011	degradation
+PUL0565	2.A.2,GH130,GH36,GH26,GH26,1.B.14,HTH_AraC	galactomannan,glucomannan	multiple_substrates	2011,2017	degradation
+PUL0566	GH2,GH53,8.A.46,1.B.14,GH147,HTH_AraC	pectin	pectin	2011,2018	degradation
+PUL0567	GH18,AA10|CBM5|CBM5,GH18|CBM5|CBM5	chitin	chitin	1999	degradation
+PUL0568	PfkB,GH32,LacI,4.A.1	sucrose	mono/di/trisaccharide	1999	degradation
+PUL0569	GH68,GH32,2.A.3	levan	fructan	2001	degradation
+PUL0570	4.A.1,GH1	cellobiose	mono/di/trisaccharide	2003	degradation
+PUL0571	4.A.3,4.A.3,4.A.3,HTH_AraC,GH4	chitooligosaccharide	chitin	2009	degradation
+PUL0572	AraC_binding,2.A.50,PL5_1,1.B.13,4.D.1	alginate	algal glycans	1993	biosynthesis
+PUL0573	3.A.1,3.A.1,3.A.1,GH1,LacI|Peripla_BP_3	cellobiose,cellulose,cellooligosaccharide	multiple_substrates	2009	degradation
+PUL0574	3.A.1,3.A.1,GH1,GH84,GntR,GH125,GH38	alpha-mannoside,N-glycan	multiple_substrates	2006	degradation
+PUL0575	GH13_18,GH13_31,GH36,3.A.1,3.A.1,3.A.1,GH4,3.A.1,3.A.1,LacI	raffinose	mono/di/trisaccharide	2011	degradation
+PUL0576	GH112,3.A.1,3.A.1,3.A.1	mucin,human milk oligosaccharide,O-glycan	multiple_substrates	2010	degradation
+PUL0577	GH94,GH20,GH9,3.A.1,3.A.1,3.A.1,3.A.1,3.A.1,HisKA|Response_reg|dCache_1|HATPase_c|PAS	chitin,chitobiose,cellobiose	multiple_substrates	2011	degradation
+PUL0578	LacI|Peripla_BP_3,3.A.1,3.A.1,3.A.1,GH1	cellodextrin	alpha-glucan	2011	degradation
+PUL0579	MarR,CE9,4.A.1	N-acetylglucosamine	glycosaminoglycan	2011	degradation
+PUL0580	Glucokinase,CE9	N-acetylglucosamine	glycosaminoglycan	2011	degradation
+PUL0581	GH32,PfkB,GH32	inulin	fructan	2012	degradation
+PUL0582	4.A.3,GH1	lactose	mono/di/trisaccharide	2012	degradation
+PUL0583	4.A.3,4.A.3,CE0,4.A.3	cellobiose	mono/di/trisaccharide	1993	degradation
+PUL0584	GH13_18,3.A.1,3.A.1,3.A.1,HTH_AraC,GH36,LacI	melibiose	mono/di/trisaccharide	2013	degradation
+PUL0585	GH1,2.A.123,Mga|HTH_11,4.A.3,4.A.3	cellobiose	mono/di/trisaccharide	2011	degradation
+PUL0586	1.B.25,GH20	chitin	chitin	2012	degradation
+PUL0587	PfkB,2.A.1,GH32	levan,inulin,fructan	multiple_substrates	2013	degradation
+PUL0588	3.A.1,3.A.1,3.A.1,GH3	chitin	chitin	2013	degradation
+PUL0589	GT35,GH77,LacI	starch	alpha-glucan	2013	degradation
+PUL0590	3.A.1,3.A.1,3.A.1,CBM34|GH13_20	maltose,maltodextrin	multiple_substrates	2013	degradation
+PUL0591	CE9,GntR	N-acetylglucosamine	glycosaminoglycan	2013	degradation
+PUL0592	HTH_AraC,8.A.59,3.A.1,3.A.1,3.A.1,GH67,GH10,GH43_12	methylglucuronoarabinoxylan	xylan	2014	degradation
+PUL0593	CBM34|GH13_39,3.A.1,3.A.1,3.A.1,GH13_2|CBM20	maltose,maltotriose	multiple_substrates	1996	degradation
+PUL0594	9.B.33,3.A.1,HTH_5,GH51	methylglucuronoarabinoxylan	xylan	2014	degradation
+PUL0595	CBM82|CBM83|GH13_41,HTH_1,Pyr_redox_2	starch	alpha-glucan	2015	degradation
+PUL0596	SBP_bac_1,3.A.1,3.A.1,GH13_36	starch	alpha-glucan	2015	degradation
+PUL0597	LacI,3.A.1,3.A.1,3.A.1,GH3	arabinoxylan,arabino-xylooligosaccharide	multiple_substrates	2015	degradation
+PUL0598	GH95	xylose	mono/di/trisaccharide	2015	degradation
+PUL0599	HTH_AraC,dCache_1|HATPase_c,SBP_bac_1,GH43_11,3.A.1,3.A.1,3.A.1	xylan	xylan	2015	degradation
+PUL0600	GH130,GH130,3.A.1,3.A.1,SBP_bac_1,HTH_AraC,8.A.59,GH2	galactomannan	beta-mannan	2015	degradation
+PUL0601	GntR,GH28,2.A.2,GH105,PfkB,TrmB	pectin	pectin	2015	degradation
+PUL0602	GH10,9.B.28,GntR,PfkB,GH39,GH67,3.A.1,3.A.1,3.A.1,GH10,GH52,CE4,3.A.1,3.A.1,SBP_bac_1,HTH_AraC,8.A.59	xylan	xylan	2015	degradation
+PUL0603	4.A.3,4.A.3,GH1	galactomannooligosaccharide	beta-mannan	2020	degradation
+PUL0604	4.A.1,GH32,LacI,GH13_31	galactomannooligosaccharide	beta-mannan	2020	degradation
+PUL0605	GT35,GT5,CBM48|GH13_11,CBM48|GH13_9	glycogen	alpha-glucan	2020,2011	biosynthesis
+PUL0606	LacI,2.A.2,GH2	beta-galactooligosaccharide	galactan	2020	degradation
+PUL0607	GH2,GH141,GH105|GH154,1.B.14,GH16_11,GH117,GH16_11,GH16_14,GH29,HTH_AraC	porphyran	algal glycans	2020	degradation
+PUL0608	HTH_AraC,3.A.1,3.A.1,3.A.1,GH136,HTH_AraC,8.A.59	human milk oligosaccharide	human milk oligosaccharide	2020	degradation
+PUL0609	GH95,GH95,3.A.1,3.A.1,SBP_bac_1,8.A.59,HTH_AraC,GH136	human milk oligosaccharide	human milk oligosaccharide	2020	degradation
+PUL0610	LacI,GH43_15|CBM6,CBM4|CBM4|GH10,GH10,GerE,FecR,1.B.14,8.A.46,GH67,GH3,GH3	xylan	xylan	2020	degradation
+PUL0611	GH97,GH13_19,GH13_38,GH31,GH13,GH65,2.A.2,LacI,1.B.14,8.A.46	alpha-glucan	alpha-glucan	2020	degradation
+PUL0612	2.A.21,8.A.46,1.B.14,LacI,GH65,GH13_38,Pyr_redox_2,1.A.8	alpha-glucan	alpha-glucan	2020	degradation
+PUL0613	1.B.14,8.A.46,PL38|GH88,GH2|CBM57	O-glycan,N-glycan	multiple_substrates	2020	degradation
+PUL0614	1.B.14,PL1_2	pectin	pectin	2020	degradation
+PUL0615	1.B.14,2.A.66,GH28	pectin	pectin	2020	degradation
+PUL0616	1.B.14,PL1_2,1.B.14	pectin	pectin	2020	degradation
+PUL0617	GH67,2.A.2,GH10,GH43_1,GH43_35,GH5_21,GH10,1.B.14	xylan	xylan	2020	degradation
+PUL0618	GH36,1.B.14,PL1	pectin	pectin	2020	degradation
+PUL0619	1.B.14,GH35	xylan	xylan	2020	degradation
+PUL0620	GH128,GH51|GH43_19,1.B.14	xylan	xylan	2020	degradation
+PUL0621	1.B.14,GH3,HTH_AraC,GH57,GT4,GH133	pectin	pectin	2020	degradation
+PUL0622	1.B.14,1.B.14,PL11_1,GH3,GH43_7,PL11_1,GH2	xylan	xylan	2020	degradation
+PUL0623	1.B.14,GH3,1.B.14,8.A.46	pectin	pectin	2020	degradation
+PUL0624	GH43_24,GH51|GH43_19,1.B.14,8.A.46,1.B.14,GH128	xylan	xylan	2020	degradation
+PUL0625	GH43_12,GH115,GH43_10,GH97,GH43_29|CBM6,CE1|CE1,GH95,GH115,HTH_AraC,GH30_8,1.B.14	xylan	xylan	2020	degradation
+PUL0626	GH43_4,GntR,GH2,GH43_4,GH127,GH51,3.A.1,3.A.1,3.A.1,GH43_26,GH51,GH27,3.A.1,HTH_8	arabinan	galactan	2020	degradation
+PUL0627	8.A.3,1.B.18,GT2,9.B.18	capsule polysaccharide	capsule polysaccharide	2021	biosynthesis
+PUL0628	8.A.3,1.B.18,GT2,GT2,9.B.18	capsule polysaccharide	capsule polysaccharide	2021	biosynthesis
+PUL0629	8.A.3,1.B.18,GT2,9.B.18	capsule polysaccharide	capsule polysaccharide	2021	biosynthesis
+PUL0630	1.B.14,GH10,GH115,GH11,2.A.2,GH10,GH43_1	xylan	xylan	2021	degradation
+PUL0631	PfkB,AraC_binding,PL15_1,3.A.1,3.A.1,3.A.1	alginate	algal glycans	2021	degradation
+PUL0632	PfkB,GH32,3.A.1,LacI	sucrose,kestose,nystose,inulin	multiple_substrates	2021	degradation
+PUL0633	PfkB,GH32,3.A.1,LacI	sucrose,kestose,nystose	multiple_substrates	2021	degradation
+PUL0634	LacI,3.A.1,3.A.1,GH32,PfkB	sucrose,kestose,nystose	multiple_substrates	2021	degradation
+PUL0635	HTH_3,GH32,GerE	sucrose,kestose,nystose,fructooligosaccharide	multiple_substrates	2021	degradation
+PUL0636	GH32,3.A.2,3.A.2,3.A.2,3.A.2	sucrose,kestose,nystose,fructooligosaccharide	multiple_substrates	2021	degradation
+PUL0637	LacI,3.A.1,3.A.1,SBP_bac_1,GH32	sucrose,kestose,nystose	multiple_substrates	2021	degradation
+PUL0638	LacI,4.A.1,GH32,PfkB	sucrose,kestose	multiple_substrates	2021	degradation
+PUL0639	GH32,4.A.1,GH32,LacI	sucrose,kestose	multiple_substrates	2021	degradation
+PUL0640	3.A.1,HATPase_c,GerE,SBP_bac_1,4.A.6,4.A.6,GH32|CBM66	sucrose,kestose,nystose	multiple_substrates	2021	degradation
+PUL0641	PadR,PfkB,GH32,4.A.1,Sigma70_r2|Sigma70_r4_2,LacI,MarR	sucrose,kestose	multiple_substrates	2021	degradation
+PUL0642	PfkB,GH36,GH13_31,LacI,GH32,GH13_18,3.A.1,3.A.1,CBM86|CBM22|GH10|CBM9,CBM61|GH53	sucrose,kestose,nystose	multiple_substrates	2021	degradation
+PUL0643	CE1,GH43_7|GH43_7,1.B.14,CE6|CE1,CE1,GH43_17,GH3,GH43_2|CBM6,HTH_AraC	arabinoxylan	xylan	2021	degradation
+PUL0644	HTH_AraC,GH43_2|CBM6,GH43_17,CE1,CE1,GH43_7|GH43_7,CE1	arabinoxylan	xylan	2021	degradation
+PUL0645	HTH_AraC,GH43_2|CBM6,GH3,GH43_17,GH43_7|GH43_7,CE1,1.B.14	arabinoxylan	xylan	2021	degradation
+PUL0646	GH3,GH158,1.B.14,GerE	beta-glucan	beta-glucan 	2021	degradation
+PUL0647	GT35,GT5,GH13_9	sucrose	mono/di/trisaccharide	2021	biosynthesis
+PUL0648	GH10,1.B.14,GH43_12,GH43_1,GH10,HTH_AraC,GH146,NUDIX,CE1,GH8,CE6,GH43_29|CBM6,GH43_29|CBM6,GH97,GH31,HTH_AraC,GH51,GH43_29,CE1|CE1,GH43_10,GH115,2.A.2,GH10,GH43_1,GH67,HTH_AraC,1.B.14,8.A.46	glucuronoarabinoxylan	xylan	2021	degradation
+PUL0649	8.A.3,1.B.18,GT2,2.A.66,9.B.18,1.B.73	capsule polysaccharide	capsule polysaccharide	2021	biosynthesis
+PUL0650	LacI,SBP_bac_1,3.A.1,3.A.1,GH36,GH39|CBM35	arabinogalactan	galactan	2021	degradation
+PUL0651	GH16_16|CBM6|CBM6,3.D.1,GH50,1.B.14,CBM6,GH16_16|CBM13,2.A.98,HTH_1,GH50,FecR,Sigma70_r2|Sigma70_r4,Pyr_redox_2,GH117,2.A.21,GH16_3,GH2,SBP_bac_1,GH50,HATPase_c|SBP_bac_3,GerE,GH127,2.A.1,GntR,GH167,HTH_AraC,GntR,CBM6|CBM6|GH86|GH86,GH50,2.A.1,GH86	agar	algal glycans	2021	degradation
+PUL0652	GH2,2.A.21,3.D.1,GH96,GH96,2.A.1,GH50,GH50,GH50,GH29,SBP_bac_1,TrmB,1.B.14,GntR,GH50,1.B.14,GH86,3.A.1,3.A.1,3.A.1,3.A.1,PfkB,GH117|GH117,Pyr_redox_2	agar	algal glycans	2021	degradation
+PUL0653	GH16_16,HTH_8,PfkB,GH2,GH117|GH117,3.A.1,3.A.1,3.A.1,LacI,GH50	agar	algal glycans	2021	degradation
+PUL0654	GerE,1.B.14,GH144,GH144,CE1,GH3,BLUF,PL6|PL6_1,PL12,PL6|PL6_1,PL17_2|PL17,AraC_binding,1.B.14,8.A.46,GntR,2.A.1,LacI,PfkB,TPR_2,Response_reg	alginate	algal glycans	2021	degradation
+PUL0655	1.B.14,PL7,PL7,GntR	alginate	algal glycans	2021	degradation
+PUL0656	GH166,GT4,2.A.66	exopolysaccharide	exopolysaccharide	2020	biosynthesis
