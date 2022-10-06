@@ -21,9 +21,11 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     data = data[data["high_level_substr"].isin(select_classes)]
     data = pd.concat([data[["sig_gene_seq", "high_level_substr"]]], ignore_index = True)
     
-    parameters_one_vs_rest = {"vr__n_estimators": [100, 300, 500]}
+    parameters_one_vs_rest = {"vr__estimator__n_estimators": [100], 
+                              "vr__estimator__class_weight": ["balanced"]}
     
     params_best = []
+    
     
     order = list(data["high_level_substr"].value_counts().index)
     
@@ -34,9 +36,12 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
         vec_size = model.wv.vectors.shape[1]
     
     if known_unknown == True:
+        known_unknown_data["high_level_substr"] = "Others"
         data = pd.concat([data[["sig_gene_seq", "high_level_substr"]], 
                           known_unknown_data[["sig_gene_seq", "high_level_substr"]]],
                          ignore_index = True)
+        
+        order = list(data["high_level_substr"].value_counts().index)
         
     skf_outer = StratifiedKFold(n_splits=K, random_state=42, shuffle = True)
     
@@ -52,7 +57,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
                                               data["high_level_substr"].values):
         X_train, X_test = data.iloc[train_index,:], data.iloc[test_index,:]
     
-        class_weights = dict(1/(X_train["high_level_substr"].value_counts()/ X_train["high_level_substr"].value_counts().sum()))
+        # class_weights = dict(1/(X_train["high_level_substr"].value_counts()/ X_train["high_level_substr"].value_counts().sum()))
         
         
         if featurizer == "countvectorizer":
@@ -60,10 +65,10 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             clf_one_vs_rest = Pipeline([('vectorizer',CountVectorizer(tokenizer=lambda x: str(x).replace("|", ",").split(','), 
                                                               lowercase = False)), 
                                 
-                                ('vr', BalancedRandomForestClassifier(n_jobs = 7))
+                                ('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7)))
                                   ])
             
-            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 0)
+            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 7, scoring = "balanced_accuracy", verbose = 0)
             
         elif featurizer in ["doc2vec_dbow", "doc2vec_dm"]:
             
@@ -79,9 +84,9 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
                 test_item = test_item.replace("|", ",").split(",")
                 X_test_doc_vectors.append(model.infer_vector(test_item).tolist())   
                 
-            clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+            clf_one_vs_rest = Pipeline([('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7)))
                                                     ])
-            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 0)
+            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 7, scoring = "balanced_accuracy", verbose = 0)
                         
             
                 
@@ -121,9 +126,9 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
                 else:
                     X_test_doc_vectors.append(np.array(word_vectors).mean(0).tolist())    
                     
-            clf_one_vs_rest = Pipeline([('vr', BalancedRandomForestClassifier(n_jobs = 7, class_weight = class_weights))
+            clf_one_vs_rest = Pipeline([('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7)))
                                                 ])
-            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 6, scoring = "balanced_accuracy", verbose = 0)
+            gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 7, scoring = "balanced_accuracy", verbose = 0)
                     
         
         else:
@@ -181,7 +186,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
     plt.xticks(weight = "bold", fontsize = 15)
-    plt.yticks(weight = "bold", fontsize = 15)
+    plt.yticks(weight = "bold", fontsize = 15, rotation = 0)
     # plt.show()
     
     # average class 
@@ -199,6 +204,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.title("Standard deviation for confusion matrix for the test set low level", fontsize = 20)
     plt.xlabel("Predicted Label", fontsize = 20)
     plt.ylabel("True Label", fontsize = 20)
+    plt.xticks(weight = "bold", fontsize = 15)
+    plt.yticks(weight = "bold", fontsize = 15, rotation = 0)    
     # plt.show()
 
 
@@ -218,10 +225,9 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.title("Classification Report", fontsize = 20)
     plt.ylabel("Metric Name", fontsize = 20)
     plt.xlabel("Substrate", fontsize = 20)
-    # plt.show()
-    
-    
-    #     overall_report
+    plt.xticks(weight = "bold", fontsize = 15)
+    plt.yticks(weight = "bold", fontsize = 15, rotation = 0)    
+
 
     overall_report = overall_report.mean(1)
     
