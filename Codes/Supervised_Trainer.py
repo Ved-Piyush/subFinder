@@ -1,4 +1,4 @@
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold, train_test_split
 from tqdm import tqdm
 from imblearn.ensemble import BalancedRandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score
@@ -11,8 +11,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.multiclass import OneVsRestClassifier
-# from Codes.embedding_modules import doc2vec_dm, doc2vec_dbow, word2vec_cbow, word2vec_sg, fasttext_sg, fasttext_cbow
-
+from Codes.Model_architectures import simple_lstm, attention_lstm_model, non_recurrent_attention_model
+from Codes.embedding_modules import doc2vec_dm, doc2vec_dbow, word2vec_cbow, word2vec_sg, fasttext_sg, fasttext_cbow
+from sklearn.preprocessing import OneHotEncoder
+import tensorflow as tf
 
 def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None): 
     
@@ -42,7 +44,10 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
                          ignore_index = True)
         
         order = list(data["high_level_substr"].value_counts().index)
-        
+    
+    
+    ohe = OneHotEncoder()
+    ohe.fit(data[["high_level_substr"]].values.reshape(-1,1))    
     skf_outer = StratifiedKFold(n_splits=K, random_state=42, shuffle = True)
     
     cm_all = np.zeros((len(order), len(order)))
@@ -129,8 +134,43 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             clf_one_vs_rest = Pipeline([('vr', OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7)))
                                                 ])
             gs_one_vs_rest = GridSearchCV(clf_one_vs_rest, parameters_one_vs_rest, cv = 5, n_jobs = 7, scoring = "balanced_accuracy", verbose = 0)
-                    
+            
+            
+            
         
+        elif featurizer in ["lstm_with_attention", "just_attention", "vanilla_lstm"]: 
+            X_train = X_train.sample(frac = 1.0)
+            
+            X_train, X_valid, y_train, y_valid = train_test_split(X_train["sig_gene_seq"], X_train["high_level_substr"], 
+                                                                  stratify = X_train["high_level_substr"],
+                                                                  test_size = 0.25)
+            
+            train_seqs = np.array([train_item.replace("|", ",").replace(",", " ") for train_item in X_train])
+            valid_seqs = np.array([valid_item.replace("|", ",").replace(",", " ") for valid_item in X_valid])
+            test_seqs = np.array([test_item.replace("|", ",").replace(",", " ") for test_item in X_test["sig_gene_seq"].values])
+            
+            y_train = ohe.transform(y_train.values.reshape(-1,1))
+            y_train = y_train.toarray()
+            
+            y_valid = ohe.transform(y_valid.values.reshape(-1,1))
+            y_valid = y_valid.toarray()
+            
+            # y_test = ohe.transform(X_test[["high_level_substr"]].values.reshape(-1,1))
+            
+            
+            if featurizer == "vanilla_lstm":
+                 model_dl = simple_lstm(len(order), False, model)
+            
+            elif featurizer == "lstm_with_attention": 
+                model_dl = attention_lstm_model(len(order), False, model)
+    
+            elif featurizer == "just_attention":
+                model_dl = non_recurrent_attention_model(len(order), False, model)
+                
+            else:
+                pass
+                
+            
         else:
             pass     
         
@@ -140,14 +180,31 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
 #             print(gs_one_vs_rest.best_params_)
 #             print(gs_one_vs_rest.best_score_)
             y_test_pred = gs_one_vs_rest.predict(X_test["sig_gene_seq"].values)
+            params_best.append(gs_one_vs_rest.best_params_)
         
         elif featurizer in ["doc2vec_dbow", "doc2vec_dm", "word2vec_cbow", "word2vec_sg", "fasttext_cbow", "fasttext_sg"]:
             gs_one_vs_rest.fit(np.array(X_train_doc_vectors), X_train["high_level_substr"].values)
 #             print(gs_one_vs_rest.best_params_)
 #             print(gs_one_vs_rest.best_score_)
             y_test_pred = gs_one_vs_rest.predict(np.array(X_test_doc_vectors))
+            params_best.append(gs_one_vs_rest.best_params_)
             
-        params_best.append(gs_one_vs_rest.best_params_)
+        elif featurizer in ["lstm_with_attention", "just_attention", "vanilla_lstm"]:
+            model_dl.fit(train_seqs, y_train, validation_data = (valid_seqs, y_valid), batch_size = 1, epochs = 2000, 
+                                     callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 10,
+                                                                                   restore_best_weights=True), 
+                                     validation_batch_size=1, verbose = 0)
+            
+            hist = model_dl.history.history['val_loss']
+            n_epochs_best = np.argmin(hist)
+            
+            y_test_pred = model_dl.predict(test_seqs, batch_size = 1, verbose = 0)
+            y_test_pred = y_test_pred.argmax(1)
+            y_test_pred = pd.get_dummies(y_test_pred)
+            y_test_pred = y_test_pred.values
+            y_test_pred = ohe.inverse_transform(y_test_pred)
+            
+            params_best.append(n_epochs_best)
         
         cm = confusion_matrix(X_test["high_level_substr"], y_test_pred, labels = order, normalize = 'true')
         cm_all+= cm
