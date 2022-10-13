@@ -155,8 +155,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             y_valid = ohe.transform(y_valid.values.reshape(-1,1))
             y_valid = y_valid.toarray()
             
-            # y_test = ohe.transform(X_test[["high_level_substr"]].values.reshape(-1,1))
-            
+            weights = 1/(y_train.sum(0)/y_train.sum(0).sum())
+            class_weights = {i:n for i, n in enumerate(weights)}
             
             if featurizer == "vanilla_lstm":
                  model_dl = simple_lstm(len(order), False, model)
@@ -193,7 +193,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             model_dl.fit(train_seqs, y_train, validation_data = (valid_seqs, y_valid), batch_size = 1, epochs = 2000, 
                                      callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 10,
                                                                                    restore_best_weights=True), 
-                                     validation_batch_size=1, verbose = 0)
+                                     validation_batch_size=1, verbose = 1, 
+                                     class_weight = class_weights)
             
             hist = model_dl.history.history['val_loss']
             n_epochs_best = np.argmin(hist)
@@ -205,6 +206,9 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             y_test_pred = ohe.inverse_transform(y_test_pred)
             
             params_best.append(n_epochs_best)
+            
+        else:
+            pass
         
         cm = confusion_matrix(X_test["high_level_substr"], y_test_pred, labels = order, normalize = 'true')
         cm_all+= cm
