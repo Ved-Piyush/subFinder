@@ -54,8 +54,8 @@ data.columns = ['PUL ID', 'high_level_substr', 'PULid', 'sig_gene_seq']
 
 
 
-top_k = 9
-K = 5
+top_k = 8
+K = 10
 known_unknown = False
 
 
@@ -67,7 +67,7 @@ model_sg =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models_10_12//word2ve
 model_fasttext_sg =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models_10_12//fasttext_sg") 
 model_fasttext_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models_10_12//fasttext_cbow") 
 
-featurizer = "vanilla_lstm"
+featurizer = "word2vec_sg"
 
 avg_acc, avg_class_acc, std_err_avg_acc, std_err_avg_classwise_acc, overall_report,  model, params_best, fig, fig2, fig3 = run_end_to_end(top_k, data, featurizer, K, known_unknown, 
                                                                                                                                           model_sg)

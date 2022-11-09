@@ -13,7 +13,7 @@ import seaborn as sns
 from sklearn.multiclass import OneVsRestClassifier
 from Codes.Model_architectures import simple_lstm, attention_lstm_model, non_recurrent_attention_model
 from Codes.embedding_modules import doc2vec_dm, doc2vec_dbow, word2vec_cbow, word2vec_sg, fasttext_sg, fasttext_cbow
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import tensorflow as tf
 
 def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None): 
@@ -46,8 +46,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
         order = list(data["high_level_substr"].value_counts().index)
     
     
-    ohe = OneHotEncoder()
-    ohe.fit(data[["high_level_substr"]].values.reshape(-1,1))    
+    le = LabelEncoder()
+    le.fit(data[["high_level_substr"]].values.reshape(-1,1).ravel())    
     skf_outer = StratifiedKFold(n_splits=K, random_state=42, shuffle = True)
     
     cm_all = np.zeros((len(order), len(order)))
@@ -149,14 +149,20 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             valid_seqs = np.array([valid_item.replace("|", ",").replace(",", " ") for valid_item in X_valid])
             test_seqs = np.array([test_item.replace("|", ",").replace(",", " ") for test_item in X_test["sig_gene_seq"].values])
             
-            y_train = ohe.transform(y_train.values.reshape(-1,1))
-            y_train = y_train.toarray()
+            y_train = le.transform(y_train.values.reshape(-1,1).ravel())
+            # y_train = y_train.toarray()
             
-            y_valid = ohe.transform(y_valid.values.reshape(-1,1))
-            y_valid = y_valid.toarray()
+            y_valid = le.transform(y_valid.values.reshape(-1,1).ravel())
+            # y_valid = y_valid.toarray()
             
-            weights = 1/(y_train.sum(0)/y_train.sum(0).sum())
-            class_weights = {i:n for i, n in enumerate(weights)}
+            y_train_df = pd.DataFrame(y_train)
+            
+            weights = y_train_df[0].value_counts()/y_train_df[0].value_counts().sum()
+            
+            weights = 1/weights
+            
+            # weights = 1/(y_train.sum(0)/y_train.sum(0).sum())
+            class_weights = dict(weights)
             
             if featurizer == "vanilla_lstm":
                  model_dl = simple_lstm(len(order), False, model)
@@ -191,9 +197,9 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             
         elif featurizer in ["lstm_with_attention", "just_attention", "vanilla_lstm"]:
             model_dl.fit(train_seqs, y_train, validation_data = (valid_seqs, y_valid), batch_size = 1, epochs = 2000, 
-                                     callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 10,
+                                     callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 5,
                                                                                    restore_best_weights=True), 
-                                     validation_batch_size=1, verbose = 1, 
+                                     validation_batch_size=1, verbose = 0, 
                                      class_weight = class_weights)
             
             hist = model_dl.history.history['val_loss']
@@ -201,9 +207,9 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             
             y_test_pred = model_dl.predict(test_seqs, batch_size = 1, verbose = 0)
             y_test_pred = y_test_pred.argmax(1)
-            y_test_pred = pd.get_dummies(y_test_pred)
-            y_test_pred = y_test_pred.values
-            y_test_pred = ohe.inverse_transform(y_test_pred)
+            # y_test_pred = pd.get_dummies(y_test_pred)
+            # y_test_pred = y_test_pred.values
+            y_test_pred = le.inverse_transform(y_test_pred.ravel())
             
             params_best.append(n_epochs_best)
             

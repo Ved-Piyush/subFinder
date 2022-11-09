@@ -79,13 +79,18 @@ model_lists_bow
 ## Step 4 - Get the substrate predictions for UHGG
 
 
+## make this code change elsewhere so that it is end to end
+to_keep = list(data["high_level_substr"].value_counts().index[:top_k])
+
+
 ## Step 1 
-uhgg_data = pd.read_csv(r"Data/Output/Unsupervised/output_UHGG.csv")
+uhgg_data = pd.read_csv(r"Data/Output/Unsupervised_10_12/output_UHGG.csv")
+uhgg_data = uhgg_data.drop_duplicates("sequence").reset_index(drop = True)
 
 ## Step 2 get the winner embedding module
 ## winner was the word2vec module
 
-trained_word2vec_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models//doc2vec_dm") 
+trained_word2vec_cbow =gensim.models.word2vec.Word2Vec.load(r"Embedding_Models_10_12//word2vec_sg") 
 vocab_cbow = set(trained_word2vec_cbow.wv.index_to_key)
 
 ## use the embedding module to convert the sequences to vectors
@@ -107,10 +112,13 @@ X_unsupervised_vectors = np.array(X_unsupervised_vectors)
 
 ## Step 3
 
+data = data[data["high_level_substr"].isin(to_keep)].reset_index(drop = True)
+
+
 ## similarly also convert the supervised data sequences
 X_supervised_vectors = []
     
-for train_item in tqdm(data["cazymes_predicted_dbcan"].values):
+for train_item in tqdm(data["sig_gene_seq"].values):
     train_item = train_item.replace("|", ",").split(",")
     word_vectors = []
     for word in train_item: 
@@ -128,7 +136,7 @@ X_supervised_vectors = np.array(X_supervised_vectors)
 ## we need to change the model a bit
 
 model_check =  OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
-model_check.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"].values)
+model_check.fit(X_supervised_vectors,  data["high_level_substr"].values)
 class_order = model_check.classes_
 
 # get the predictions
@@ -147,7 +155,7 @@ for inner in tqdm(range(0,how_many)):
     
     ## one vs all model
     model =  OneVsRestClassifier(BalancedRandomForestClassifier(n_jobs = 7, class_weight = "balanced"))
-    model.fit(X_supervised_vectors,  data["updated_substrate (07/01/2022)"].values)
+    model.fit(X_supervised_vectors,  data["high_level_substr"].values)
     preds_full = model.predict(X_unsupervised_vectors)
     preds_proba = model.predict_proba(X_unsupervised_vectors)
     normalized_probs += preds_proba
@@ -178,7 +186,7 @@ for inner in tqdm(range(0,how_many)):
 outer_catch_df = pd.concat(outer_catch,1)
 reorder = np.sort(outer_catch_df.columns)
 outer_catch_df = outer_catch_df[reorder]
-outer_catch_df["sequence"] = uhgg_data["sequence"]
+outer_catch_df["sequence"] = uhgg_data["sequence"].values
 cols = list(outer_catch_df.columns)
 # move the column to head of list using index, pop and insert
 cols.insert(0, cols.pop(cols.index('sequence')))
@@ -207,7 +215,7 @@ outer_catch_df_summary = outer_catch_df_summary.reset_index()
 outer_catch_df_summary.columns = ["sequence", "substrate", "probability_score", "successes"]
 # outer_catch_df = pd.concat([outer_catch_df, outer_catch_df_summary])
 
-def p_value_function(successes, trials= 15, prob = 0.5): 
+def p_value_function(successes, trials= how_many, prob = 0.5): 
     prob = binom.cdf(successes, trials, prob)
     return 1-prob
 
@@ -216,5 +224,5 @@ outer_catch_df_summary = outer_catch_df_summary.drop("successes", 1)
 outer_catch_df_summary = outer_catch_df_summary.sort_values(["sequence", "p_value"], ascending = [True, True])
 outer_catch_df_summary = outer_catch_df_summary.reset_index(drop = True)
 
-outer_catch_df_summary.to_csv("Data/Output/Predictions/Predictions_UHGG_with_probability_and_p_values_Blast_Style.csv", index = False)
+outer_catch_df_summary.to_csv("Data/Output/Predictions/Predictions_UHGG_with_probability_and_p_values_Blast_Style_new_sup_new_unsup.csv", index = False)
 normalized_probs["predicted_substrate"].value_counts()
