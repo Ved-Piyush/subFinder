@@ -46,10 +46,10 @@ vec_size = np.min((300, vec_size))
 ## train the modules
 
 ## doc2vec_dm
-doc2vec_dm = gensim.models.doc2vec.Doc2Vec(corpus_file=r"Data//Output//Unsupervised_10_12//all_unsupervised_text.txt", 
+doc2vec_dbow = gensim.models.doc2vec.Doc2Vec(corpus_file=r"Data//Output//Unsupervised_10_12//all_unsupervised_text.txt", 
                                            vector_size=vec_size, min_count=5, epochs=60, workers = 7, dm = 0, 
                                       dbow_words = 0, window = 7)
-doc2vec_dm.save(r"Embedding_Models_10_12//" + "doc2vec_dm" )
+doc2vec_dbow.save(r"Embedding_Models_10_12//" + "doc2vec_dbow" )
 
 
 ## word2vec_cbow
@@ -83,8 +83,8 @@ fasttext_sg.save(r"Embedding_Models_10_12//" + "fasttext_sg" )
 
 
 ## doc2vec_dbow
-doc2vec_dbow = gensim.models.doc2vec.Doc2Vec(corpus_file=r"Data//Output//Unsupervised_10_12//all_unsupervised_text.txt", 
+doc2vec_dm = gensim.models.doc2vec.Doc2Vec(corpus_file=r"Data//Output//Unsupervised_10_12//all_unsupervised_text.txt", 
                                            vector_size=vec_size, min_count=5, epochs=60, workers = 7, dm = 1, 
                                       dbow_words = 0, window = 7)
 
-doc2vec_dbow.save(r"Embedding_Models_10_12//" + "doc2vec_dbow")
+doc2vec_dm.save(r"Embedding_Models_10_12//" + "doc2vec_dm")
