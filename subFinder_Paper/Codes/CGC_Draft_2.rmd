@@ -55,6 +55,7 @@ In addition to the BRF classification model we also tested out three different n
 
 ![Architecture of the just_attention architecture which can provide the signature genes](attention_module.png)
 
+Figure 8 shows the architecture of the `just_attention` model using an example sequence that has three genes. The very first step is tokenizing the genes and then getting their corresponding feature vectors from any Word2Vec or FastText module. Then the gene sequence can be represented by these three gene vectors. These vectors are then passed to an attention layer which is able to predict the importance weight of the three genes. We can then multiply these importance weights with the corresponding gene vectors in order to get an element-wise weighted average vector which is then considered to be the representation of the gene sequence. This is because the importance weights are between 0 and 1 so when we multiply them element-wise with the Word2Vec gene vectors and then add the vectors element-wise it is equivalent to taking an element-wise weighted average of the Word2Vec gene vectors where the weights are the attention weights. Once this representation for the entire gene sequence has been computed it is then passed to a fully connected dense layer with as many nodes as the number of categories in the classification model. 
 
 # Experimental Results
 
@@ -70,7 +71,7 @@ Figure 10 shows the averaged ten fold cross validation accuracy and classwise ac
 
 ![Classification metrics for the most accurate model in each number of high level substrates category](best_model.png)
 
-We can also compare which type of models are usually the best performing models by keeping a track of the winning models in each fold. Figure 11 shows that in four out of the ten folds the `just_attention` neural network model performed the best, followed by the `doc2vec_dbow` model which was best ub 3 of the folds. This shows that the neural network architecture of `just_attention` would be a great choice to use for the prediction model as not only does it have a good predictive performance but also by it's construction has model interpretability baked in as it can also provide the signature genes for the prediction. 
+We can also compare which type of models are usually the best performing models by keeping a track of the winning models in each fold. Figure 11 shows that in four out of the ten folds the `just_attention` neural network model performed the best, followed by the `doc2vec_dbow` model which was best in 3 of the folds. This shows that the neural network architecture of `just_attention` would be a great choice to use for the prediction model as not only does it have a good predictive performance but also by it's construction has model interpretability baked in as it can also provide the signature genes for the prediction. 
 
 ![Number of times each modeling method was the most accurate across the cross validation folds](number_best.png)
 
@@ -80,9 +81,21 @@ When the prediction models created for subFinder will be used for real world pre
 
 ![Comparison of the averaged ten fold cross validation accuracy for the Word2Vec + BRF model with and without the Others category](others_no_others.png)
 
+## Signature Genes for the high level substrate categories
 
-# Evaluating the quality of predictions from subFinder
+In this section we share some signature genes for the high level substrate categories that were computed using the `just_attention` model using the methodology described in section 2.5.1. Since it was determined in Section 3.1 that the optimum number of classes that the classification models in subFinder can handle is seven, we would rerun the `just_attention` model for the top seven most frequent high level substrate categories. 
 
-In this section basically check the overlap of predictions for the unsupervised domains with Jinfang's predictions. Also check the overlap between signature genes from the deep learning models to Xinpeng's methods. 
+![Ten fold averaged confusion matrix using the just_attention model for the top seven substrate categories](just_attention_cm.png)
 
+The ten fold averaged cross validation accuracy and classwise accuracy for the `just_attention` model on the top seven substrates is $83.27\%$ and $81.90%$ respectively. These accuracy values along with the confusion matrix in figure 14 signify that the performance of this model is quite accurate specially given the fact that the number of training samples for categories such as starch and cellulose is 16, which is quite low. Once we have made sure that the prediction performance of this model is satisfactory, we can retrain the model on majority of the training data and then extract the attention layer weights for a new test sample. We would still need a reasonably sized validation set to terminate the training of the `just_attention` model by monitoring the validation accuracy. This early termination prevents the overfitting of the `just_attention` model. Once the `just_attention` model has trained, we can pass all of the correctly predicted validation sequences through the network architecture and extract the importance scores from the attention layer. The reason why we use the correctly predicted validation sequences and not the incorrectly predicted validation sequences is because it does not make sense to talk about signature genes when we know that the prediction from the model was incorrect. 
+
+![Signature genes from the just_attention model for the top seven most frequent high level substrates](sig_gene.png)
+
+Figure 15 shows the signature genes of the top seven most frequent high level substrates using the `just_attention` model. The x axis of the plot shows the proportion of correctly predicted validation samples in which the particular signature gene was deemed as the most important gene and the y axis shows the average importance score of the particular gene. The points in the scatterplot are colored by the particular high level substrate category for which they were the most important gene for prediction. There are 14 genes plotted in the scatterplot of which there is information about 12 (excluding 8.A.9 and FecR) from literature. All the 12 signature genes have been verified from literature to be the correct signature genes for the corresponding high level substrate categories. Therefore, there is good evidence of overlap between that the signature genes computed from the `just_attention` model and the signature genes computed from literature.  
+
+## Comparison of subFinder predictions with Jinfang's method
+
+Jinfang has a method that can predict the high level substrates for the hosts of rumen, marine, oral, and UHGG. However, Jinfang's method can predict for many other high level substrates that are different from the top seven that we currently provide predictions for from the subFinder models. Therefore, we should compare subFinder's predictions on these four hosts for only those CGC sequences which are also predicted to be in one of the seven high level substrates used in the subFinder model from Jinfang's method. This comparison will tell us the level of similarity between predictions from Jinfang's method and predictions from subFinder for the seven high level substrates used in the subFinder model. We can further refine the predictions by using a cutoff value for the p values provided using subFinder. Figure 16 shows the percentage similarity between the high level substrate predictions from subFinder and Jinfang's method with and without the p value filtering where we retain subFinder predictions for those sequences which have a p value less than 0.1. The number of CGC sequences that have the same high level substrate predictions from subFinder and Jinfang's method are 5297 for UHGG, 3096 for Cow Rumen, 639 for Marine, and 322 for Human Oral.
+
+![Comparison of subFinder predictions with Jinfang's method for the four hosts unsupervised CGC sequences](similarity_jf.png)
 

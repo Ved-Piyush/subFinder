@@ -252,7 +252,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.title("10-fold averaged confusion matrix for the BOW BRF model", fontsize = 20, weight = "bold")
     plt.xlabel("Predicted Label",  weight = "bold", fontsize = 20)
     plt.ylabel("True Label", weight = "bold", fontsize = 20)
-    plt.xticks(weight = "bold", fontsize = 15)
+    plt.xticks(weight = "bold", fontsize = 15, rotation = 90)
     plt.yticks(weight = "bold", fontsize = 15, rotation = 0)
     # plt.show()
     
@@ -271,7 +271,7 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     plt.title("Standard deviation for confusion matrix for the test set low level", fontsize = 20)
     plt.xlabel("Predicted Label", fontsize = 20)
     plt.ylabel("True Label", fontsize = 20)
-    plt.xticks(weight = "bold", fontsize = 15)
+    plt.xticks(weight = "bold", fontsize = 15, rotation = 90)
     plt.yticks(weight = "bold", fontsize = 15, rotation = 0)    
     # plt.show()
 

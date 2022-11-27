@@ -52,9 +52,12 @@ data = pd.merge(data, new_sup_data_with_nulls, on = ["PUL ID"], how = "left")
 data = data.drop(["sig_gene_seq"],1)
 data.columns = ['PUL ID', 'high_level_substr', 'PULid', 'sig_gene_seq']
 
+data = pd.read_csv('Data/Supervised_Sequences/reduced_sup_data.csv')
+data.columns = ['PUL ID', 'high_level_substr', 'PULid', 'sig_gene_seq']
+data = data[data["high_level_substr"] != "capsule polysaccharide synthesis"]
 
 
-top_k = 8
+top_k = 7
 K = 10
 known_unknown = False
 
