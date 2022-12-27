@@ -58,8 +58,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     avg_class_acc_k_list = []
 #     avg_class_acc_k = 0
         
-    for train_index, test_index in skf_outer.split(data["sig_gene_seq"],
-                                              data["high_level_substr"].values):
+    for train_index, test_index in tqdm(skf_outer.split(data["sig_gene_seq"],
+                                              data["high_level_substr"].values)):
         X_train, X_test = data.iloc[train_index,:], data.iloc[test_index,:]
     
         # class_weights = dict(1/(X_train["high_level_substr"].value_counts()/ X_train["high_level_substr"].value_counts().sum()))
@@ -196,11 +196,16 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
             params_best.append(gs_one_vs_rest.best_params_)
             
         elif featurizer in ["lstm_with_attention", "just_attention", "vanilla_lstm"]:
+            # model_dl.fit(train_seqs, y_train, validation_data = (valid_seqs, y_valid), batch_size = 1, epochs = 2000, 
+            #                           callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 30,
+            #                                                                         restore_best_weights=True), 
+            #                           validation_batch_size=1, verbose = 0, 
+            #                           class_weight = class_weights)
+
             model_dl.fit(train_seqs, y_train, validation_data = (valid_seqs, y_valid), batch_size = 1, epochs = 2000, 
-                                     callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 5,
+                                     callbacks  = tf.keras.callbacks.EarlyStopping(monitor = "val_loss", patience = 30,
                                                                                    restore_best_weights=True), 
-                                     validation_batch_size=1, verbose = 0, 
-                                     class_weight = class_weights)
+                                     validation_batch_size=1, verbose = 0)
             
             hist = model_dl.history.history['val_loss']
             n_epochs_best = np.argmin(hist)

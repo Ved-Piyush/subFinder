@@ -16,7 +16,8 @@ import numpy as np
 ## Now read the unsupervised data corpus
 updated_data_unsupervised = pd.read_csv(r"Data//Output//Unsupervised_10_12//all_unsupervised.csv")
 updated_data_unsupervised = updated_data_unsupervised.sample(frac = 1.0).reset_index(drop = True)
-
+# updated_data_unsupervised = updated_data_unsupervised.drop_duplicates("sequence")
+# updated_data_unsupervised = updated_data_unsupervised.reset_index(drop = True)
 
 # updated_data_unsupervised.columns = ["sig_gene_seq"]
 # another round of drop duplicates
@@ -88,3 +89,10 @@ doc2vec_dm = gensim.models.doc2vec.Doc2Vec(corpus_file=r"Data//Output//Unsupervi
                                       dbow_words = 0, window = 7)
 
 doc2vec_dm.save(r"Embedding_Models_10_12//" + "doc2vec_dm")
+
+
+# word2vec_sg = gensim.models.Word2Vec(corpus_file=r"Data//Output//Unsupervised_10_12//all_unsupervised_text.txt", 
+#                                            vector_size=vec_size, window = 7, min_count = 5, max_vocab_size = None, sg = 1,
+#                                            workers = 7, epochs=60)
+
+# word2vec_sg.save(r"Embedding_Models_10_12//" + "word2vec_sg_50")

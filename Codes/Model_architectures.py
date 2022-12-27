@@ -40,7 +40,7 @@ def simple_lstm(num_classes, training, model_cbow):
     model = tf.keras.models.Model(input_layer, pred_output)
     
     model.compile(loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits = True), 
-                 optimizer = tf.keras.optimizers.Adam(learning_rate = 1e-4), 
+                 optimizer = tf.keras.optimizers.Adam(learning_rate = 1e-3), 
                  metrics= "accuracy")
     
     return model
@@ -105,7 +105,7 @@ def attention_lstm_model(num_classes, training, model_cbow):
     model = tf.keras.models.Model(input_layer, pred_output)
     
     model.compile(loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), 
-                 optimizer = tf.keras.optimizers.Adam(learning_rate = 1e-4), 
+                 optimizer = tf.keras.optimizers.Adam(learning_rate = 1e-3), 
                  metrics= "accuracy")
     
     return model
