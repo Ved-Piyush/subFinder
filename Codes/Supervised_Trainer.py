@@ -58,8 +58,8 @@ def run_end_to_end(top_k, data, featurizer, K, known_unknown, model = None):
     avg_class_acc_k_list = []
 #     avg_class_acc_k = 0
         
-    for train_index, test_index in tqdm(skf_outer.split(data["sig_gene_seq"],
-                                              data["high_level_substr"].values)):
+    for train_index, test_index in skf_outer.split(data["sig_gene_seq"],
+                                              data["high_level_substr"].values):
         X_train, X_test = data.iloc[train_index,:], data.iloc[test_index,:]
     
         # class_weights = dict(1/(X_train["high_level_substr"].value_counts()/ X_train["high_level_substr"].value_counts().sum()))
