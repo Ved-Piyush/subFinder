@@ -1,3 +1,5 @@
 # Ignore all npyfiles
 *.npy
+*.tgz
 Data/Unsupervised_Sequences_10_12/
+IFDP_sub/PUL/
